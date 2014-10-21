@@ -1,0 +1,21 @@
+<h1 id="changelog">Changelog</h1>
+<h2 id="v1-5-0">v1.5.0</h2>
+<ul>
+<li><p>Modificado el mixin de .font-face para que encaje con un tamaño de fuente base de 100% y no 62.5% como estaba antes. Si tenemos un mixin para calcular todo, no nos hace falta entresijos para calcular medidas.</p>
+</li>
+<li><p>Por ende, he cambiado el tamaño de fuente base a 100%.</p>
+</li>
+<li><p>Arreglos varios a los botones: 
+-He quitado degradados a los botones, viva el flat!.
+-Ajustadas las clases y loca colores de cada textura.
+-Eliminado el botón inverso (quién pude necesitar un botó con colores inversos??).</p>
+</li>
+<li><p>Creado un nuevos archivos .Less para modularizar lo máximo posible: helpers.less donde meteremos las clases y así no tenerlas mezcladas con los mixins paramédicos.</p>
+</li>
+<li><p>Eliminado todo soporte a cualquier navegador en concreto.</p>
+</li>
+<li><p>Agregamos una navegación simple (.nav) una que ocupa el 100% del contenedor (.nav--fit) y una en bloque de donde se puede partir a una navegación en pestañas (.nav--tabs). Puede que con tiempo le asigne estilos y variables.</p>
+</li>
+<li><p>Poco a poco voy modificando toda la estructura de nombres de selectores para que se sepa cual se extiende a partir de otro. Ej: .nav es un objeto y .nav--tabs es una extensión de ese objeto. Sabemos que para usar la extensión, necesitamos el objeto: class=&quot;nav nav--tabs&quot;.</p>
+</li>
+</ul>

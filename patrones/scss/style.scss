@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+/**
+ * Aquí incluímos todos los módulos (archivos .scss) que se can
+ * a compilar en el CSS definitivo: /css/style.css.
+ * Si no usas algún módulo, es recomendable que elimines
+ * o comentes su inclusión para no tener estilos innecesarios en tu CSS final
+ * y optimizar lo máximo posible.
+ */
+
+@import "../../scss/_contenido.scss";
+
+@import "../../scss/lib/_variables.scss";
+
+@import "../../scss/lib/_mixins.scss";
+
+@import "../../scss/lib/_placeholders.scss";
+
+@import "../../scss/base/_reset.scss";
+
+@import "../../scss/base/_fuentes.scss";
+
+@import "../../scss/base/_links.scss";
+
+@import "../../scss/componentes/_tablas.scss";
+
+@import "../../scss/componentes/_botones.scss";
+
+@import "../../scss/base/_elementos.scss";
+
+@import "../../scss/base/_tipografia.scss";
+
+@import "../../scss/componentes/_navegacion.scss";
+
+@import "../../scss/componentes/_paginacion.scss";
+
+@import "../../scss/base/_formularios.scss";
+
+@import "../../scss/layout/_sitio.scss";
+
+@import "../../scss/componentes/_texturas.scss";
+
+@import "../../scss/layout/_breakpoints.scss";
+
+@import "../scss/_patron.scss";
