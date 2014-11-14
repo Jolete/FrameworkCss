@@ -8,18 +8,19 @@
  */
 
 
-/*------------------------------------*\
+/*------------------------------------
+*\
     $BREAKPOINTS
 \*------------------------------------*/
 /**
  * "Start with the small screen first, then expand until it looks like shit. Time to insert a breakpoint!"
  */
 
-$bp1 : 30em;
-$bp2 : 37.5em;
-$bp3 : 48em;
-$bp4 : 56.25em;
-$bp5 : 68.75em;
+$bp1 : 30em;      // 480px
+$bp2 : 37.5em;    // 600px
+$bp3 : 48em;      // 768px    
+$bp4 : 56.25em;   // 900px
+$bp5 : 68.75em;   // 1100px
 
 
 
@@ -40,12 +41,15 @@ $no-mq-classname: ".ie8-sucks";
 
 
 /*------------------------------------*\
-    $IMAGE-DIR
+    $DIRECTORIES
 \*------------------------------------*/
+
+$Framework-dir: "./../";
+
 /**
  * Con agregar esta variable a las imágenes declaradas en CSS apañamos:
  */
-$image-dir: "../img";
+$image-dir: $Framework-dir + "imgs";
 
  //Use: background-image:url("#{$image-dir}/btn.jpg");
 
@@ -59,11 +63,11 @@ $image-dir: "../img";
 /**
  * Definimos elementos constantes del layout
  */
-$baselineheight :     1.5em;
+$baselineheight :     1.5em;      // Espai entre linies
 $baseline :           $baselineheight;
-$gutterwidth :        24px;
-$pagemaxwidth :       80%;
-$radius :             2px;
+$gutterwidth :        24px;       // Padding laterales de anchura
+$pagemaxwidth :       80%;        // Máxima anchura de la pàgina
+$radius :             2px;        
 $hovertransition :    .3s;
 $animationtime :      .8s;
 
@@ -87,7 +91,7 @@ $z-layers: (
  * $altfont para textos alternativos, como citas, intro, etc...
  * $codefont para código
  */
-$basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$basefont : "Helvetica", Helvetica, Arial, sans-serif;
 $altfont : Georgia, Times, "Times New Roman";
 $codefont : "Courier New", monospace;
 $baseheadingfont : inherit;
@@ -111,7 +115,9 @@ $altlineheight : 1.35em;
  * $altfont para textos alternativos, como citas, intro, etc...
  * $codefont para código
  */
-$basefontsize :      16;
+$basefontsize      :      16;
+$basefontsizesmall :      10;
+$basefontsizelarge :      32;
 
 
 
@@ -123,7 +129,7 @@ $basefontsize :      16;
 /**
  * Brand stuff
  */
-$basecolor      : rgb(33,148,214);              // Azul Tecnogeo
+$basecolor      : rgb(233,248,214);              // Azul Tecnogeo
 //$basecolor      :  color-opacity($basec, 0.1);              // Azul Tecnogeo
 $basecolor-light: lighten($basecolor, 5%);
 $secondary      : rgb(57,194,233);              // Azul cyan CoolVillage
@@ -131,6 +137,7 @@ $secondary      : rgb(57,194,233);              // Azul cyan CoolVillage
 $bordercolor    : rgb(36,58,80);                // Bordes azul fuerte
 $bordercolor1   : rgb(224,224,224);             // Bordes grises
 $compcolor      : rgb(216,240,227);             //
+$compcolor2     : rgb(216,240,227);             //
 
 /**
  * Escala de grises
@@ -260,6 +267,7 @@ $inputborderwidth   : 1px;
 $inputborderstyle   : solid;
 $inputhover         : lighten($black, 50%);
 $inputfocus         : $basecolor, 40%;
+$inputfocusHalo     : lighten($black, 10%);
 $placeholdercolor   : $lightergrey;
 
 

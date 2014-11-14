@@ -1,4 +1,33 @@
 <h1 id="changelog">Changelog</h1>
+<h2 id="v1-7-0">v1.7.0</h2>
+<ul>
+<li>Anmadgfasçdgñlf jagdf
+agafsga s</li>
+</ul>
+<p>afasdo jhfasfa
+asdplfjasdpl
+kfasdjk
+fàsl</p>
+<h2 id="v1-6-0">v1.6.0</h2>
+<ul>
+<li><p>Añadido mixin de &quot;prefixer&quot;. Este permite crear todas las entradas de 
+una propiedad con un valor y para los diferentes navegadores. </p>
+<pre><code>     @mixin prefixer ($property, $value, $prefixes) {}
+
+     ejemplo:
+
+  @mixin align-items($align) {
+      @include prefixer (align-items, $align, webkit moz ms o spec );
+  }
+</code></pre></li>
+<li><p>Algunos mixins tiran ahora del mixin de &quot;prefixer&quot;</p>
+</li>
+<li>Se ha reestructurado las carpetas y los ficheros<ul>
+<li>Ahora la carpeta pages contiene todas aquellas pantallas con algunos estilos diferentes o específicos. </li>
+</ul>
+</li>
+<li>Se ha añadidos los imports en Style.scss</li>
+</ul>
 <h2 id="v1-5-0">v1.5.0</h2>
 <ul>
 <li><p>Modificado el mixin de .font-face para que encaje con un tamaño de fuente base de 100% y no 62.5% como estaba antes. Si tenemos un mixin para calcular todo, no nos hace falta entresijos para calcular medidas.</p>

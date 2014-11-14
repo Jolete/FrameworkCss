@@ -105,7 +105,7 @@ select {
 }
 
 input[type="image"],
-input[type="checkbox"],
+//input[type="checkbox"],
 input[type="radio"] {
 	width : auto;
 	height : auto;
@@ -117,7 +117,7 @@ input[type="radio"] {
 	border : 0 \9;
 }
 
-input[type="checkbox"],
+//input[type="checkbox"],
 input[type="radio"] {
 	@include box-sizing(border-box);
 	padding : 0;
@@ -178,19 +178,21 @@ input[type="hidden"] {
 }
 
 .radio,
-.checkbox {
+//.checkbox 
+{
 	padding-left : 18px;
 	font-weight : normal;
 }
 
 .radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-	float : left;
-	margin-left : -18px;
-}
+// .checkbox input[type="checkbox"] {
+// 	float : left;
+// 	margin-left : -18px;
+// }
 
 .radio.inline,
-.checkbox.inline {
+// .checkbox.inline 
+{
 	display : inline-block;
 	padding-top : 5px;
 	margin-bottom : 0;
@@ -198,7 +200,8 @@ input[type="hidden"] {
 }
 
 .radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline {
+//.checkbox.inline + .checkbox.inline 
+{
 	margin-left : 10px;
 }
 
@@ -221,11 +224,24 @@ textarea:focus {
 	border-color : $inputfocus;
 	outline : 0;
 	outline : thin dotted \9;
+
+	// Metemos un pequeño sombreado exterior
+	@include box-shadow(0px 0px 6px 0px $inputfocusHalo);
 }
+
+// input:focus {
+	 // border:1px solid red;
+	// // margin: auto;
+ // //  	width: 147px;
+ // //  	height: 90px;
+ // //  background-color: transparent;
+
+	//background: yellow;
+
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
-input[type="checkbox"]:focus,
+//input[type="checkbox"]:focus,
 select:focus {
 	@include box-shadow(none);
 }
@@ -332,3 +348,44 @@ input:required:focus:valid {
   	background-color:lighten($color-success, 40%);
   	border:1px solid $color-success;
 }
+
+
+// [type="checkbox"] {
+//   position: absolute;
+//   left: 0px;
+//   color: red;
+
+// }
+// [type="checkbox"] + label:after {
+//   content: '';
+//   position: absolute;
+// }
+// [type="checkbox"] + label {
+//   display: block;
+//   position: relative;
+//   padding-left: 26px;
+//   cursor: pointer;
+//   line-height: 36px;
+//   font-size: 28px;
+//   color: #e74c3c;
+//   text-shadow: #2c3e50 2px 2px 1px;
+//   transition: color .3s;
+// }
+// [type="checkbox"] + label:after {
+//   width: 30px; 
+//   height: 30px;
+//   transition: all .2s;
+//   top: 0; 
+//   left: 0;
+// }
+// /* OFF */
+// [type="checkbox"]:not(:checked) + label:after {
+//   background: url('https://dl.dropboxusercontent.com/u/3522/check_off.png') left center no-repeat;
+// }
+// /* ON */
+// [type="checkbox"]:checked + label {
+//   color: #fff;
+// }
+// [type="checkbox"]:checked + label:after {
+//   background: url('https://dl.dropboxusercontent.com/u/3522/check_on.png') left center no-repeat;
+// }

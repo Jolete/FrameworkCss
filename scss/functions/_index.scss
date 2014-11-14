@@ -1,0 +1,34 @@
+
+
+
+
+
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+
+
+
+
+/* 
+ * Función para controlar el index 
+ */
+ 
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+ 
+  @return map-get($z-layers, $layer);
+}
+
+
+
+
+// Funciones de picture
+//@mixin picture-list ($_small, $_smallsize,$_medium, $_mediumsize,$_big, $_bigsize, $_large, $_largesize...) {
+// @mixin picture-list ($property, $value...) {
+// 	<picture>
+// 	</picture>
+// }
+

@@ -10,40 +10,42 @@
  */
 $media-queries-supported : true;
 
-@import "contenido.scss";
+// Documentation
+@import "docs/_contenido.scss";
 
-@import "lib/variables.scss";
+// Custom Variables
+@import "base/_variables.scss";
 
-@import "lib/mixins.scss";
+// Custom Helpers & Functions
+@import "mixins/_mixins.scss";
+@import "functions/_functions.scss";
 
-@import "lib/flex.scss";
+// base SASS
+@import "base/_reset.scss";
+@import "base/_fuentes.scss";
+@import "base/_tipografia.scss";
 
-@import "lib/placeholders.scss";
+// Components SASS
+@import "componentes/_flex.scss";
+@import "componentes/_placeholders.scss";
+@import "componentes/_links.scss";
+@import "componentes/_tablas.scss";
+@import "componentes/_botones.scss";
+@import "componentes/_elementos.scss";
+@import "componentes/_navegacion.scss";
+@import "componentes/_paginacion.scss";
 
-@import "base/reset.scss";
+// Layout SASS
+@import "layout/_formularios.scss";
+@import "componentes/_alertas.scss";
+@import "componentes/_texturas.scss";
+@import "layout/_breakpoints.scss";
 
-@import "base/fuentes.scss";
+// Specific pages SASS
+@import "pages/_sitio.scss";
+@import "pages/_inicio.scss";			// Versió
+@import "pages/_login.scss"; 			// Login
+@import "pages/_gestorelementos.scss"; 	// Gestor elementos: 		;
 
-@import "base/links.scss";
-
-@import "componentes/tablas.scss";
-
-@import "componentes/botones.scss";
-
-@import "base/elementos.scss";
-
-@import "base/tipografia.scss";
-
-@import "componentes/navegacion.scss";
-
-@import "componentes/paginacion.scss";
-
-@import "base/formularios.scss";
-
-@import "layout/sitio.scss";
-
-@import "componentes/texturas.scss";
-
-@import "layout/breakpoints.scss";
 
 // @import "debug.scss";  // Utilizado para comprobar que el marcado HTML no contenga errores

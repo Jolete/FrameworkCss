@@ -1,0 +1,77 @@
+
+
+/*------------------------------------*\
+    $BORDER 
+\*------------------------------------*/
+
+/*
+/  Gestionamos todos los mixins referente a los bordes, 
+/  el tamaño, radio, color, etc.
+*/
+
+/*------------------------------------*\
+//    Colores 
+\*------------------------------------*/
+
+@mixin border-color($Color: $bordercolor) {
+	border-top : solid 1px $Color;
+	border-left : solid 1px $Color;
+	border-right : solid 1px $Color;
+	border-bottom : solid 1px $Color;
+}
+
+
+// .bordered(COLOR, COLOR, COLOR, COLOR);
+@mixin border-color-spec($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
+	border-top : solid 1px $top-color;
+	border-left : solid 1px $left-color;
+	border-right : solid 1px $right-color;
+	border-bottom : solid 1px $bottom-color;
+}
+
+
+/*------------------------------------*\
+//    Radios
+\*------------------------------------*/
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+}
+
+// .border-radius(VALUE);
+@mixin border-radius($Radius: 0) {
+	@include prefixer(border-radius, $Radius, webkit moz spec) 
+}
+
+// .border-radius(VALUE,VALUE,VALUE,VALUE);
+@mixin border-radius-spec($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+	-webkit-border-top-right-radius : $topright;
+	-webkit-border-bottom-right-radius : $bottomright;
+	-webkit-border-bottom-left-radius : $bottomleft;
+	-webkit-border-top-left-radius : $topleft;
+	-moz-border-radius-topright : $topright;
+	-moz-border-radius-bottomright : $bottomright;
+	-moz-border-radius-bottomleft : $bottomleft;
+	-moz-border-radius-topleft : $topleft;
+	border-top-right-radius : $topright;
+	border-bottom-right-radius : $bottomright;
+	border-bottom-left-radius : $bottomleft;
+	border-top-left-radius : $topleft;
+	-webkit-background-clip : padding-box;
+	-moz-background-clip : padding;
+	background-clip : padding-box;
+}

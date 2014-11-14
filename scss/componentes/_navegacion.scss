@@ -42,7 +42,7 @@
      * Place a hamburger (don’t hate the player, hate the game...) icon
      * over the top of our nav element.
      */
-    &:after {
+     &:after {
         content: "☰";
         font-size: $nav-icon-size;
         width: 1em;
@@ -53,10 +53,10 @@
         left: 50%;
         margin-top:  -($nav-icon-size / 2);
         margin-left: -($nav-icon-size / 2);
-     }
+    }
 }
 
-    .nav--top__list {
+.nav--top__list {
     list-style: none;
     margin:  0;
     padding: 0;
@@ -73,10 +73,10 @@
     */
     width: 200px;
     z-index: -1;
-  }
+}
 // Ocultamos el checkbox
-     .checkbox__hack {
-        display: none;
+.checkbox__hack {
+    display: none;
 
         /*
          * Quitamos el overflow:hidden para que se muestre el menú cuando
@@ -85,53 +85,53 @@
          * (Eso y el content del after para que sea una X y no la hamburguesa)
          */
 
-        &:checked {
+         &:checked {
             ~ .nav--top {
               overflow: visible;
 
               &::after {
                 content:"x";
-              }
             }
-         }
-     }
+        }
+    }
+}
 
 
  // Estilizamos el label para que aparezca JUSTO encima de la navegación
-     .checkbox-hack__label {
-        position: absolute;
-        top:0;
-        left:0;
-        z-index: 100;
-        width:  100%;
-        height: $nav-height;
-        color: $nav-color;
-        overflow: hidden;
-        cursor: pointer;
-        margin:0;
-        z-index: 100;
-     }
+ .checkbox-hack__label {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    width:  100%;
+    height: $nav-height;
+    color: $nav-color;
+    overflow: hidden;
+    cursor: pointer;
+    margin:0;
+    z-index: 100;
+}
 
 
 // Estilos a los links, puro adorno:
 
 a, a:visited {
-        color: $nav-color;
-        display: block;
-        padding-left:  ($nav-width - $nav-icon-size) / 2;
-        line-height: $nav-width;
-        background-image: none;
-        line-height: 2;
-        text-transform: uppercase;
-        font-size:14;
-        border-bottom: 1px solid darken($secondary, 8);
-        border-top: 1px solid lighten($secondary, 5);
-        background-color: $secondary;
-        text-shadow: 1px 1px 1px lighten($secondary, 5);
+    color: $nav-color;
+    display: block;
+    padding-left:  ($nav-width - $nav-icon-size) / 2;
+    line-height: $nav-width;
+    background-image: none;
+    line-height: 2;
+    text-transform: uppercase;
+    font-size:14;
+    border-bottom: 1px solid darken($secondary, 8);
+    border-top: 1px solid lighten($secondary, 5);
+    background-color: $secondary;
+    text-shadow: 1px 1px 1px lighten($secondary, 5);
 
-        &:hover {
-            text-decoration: none;
-            background-color: darken($secondary, 10);
-        }
+    &:hover {
+        text-decoration: none;
+        background-color: darken($secondary, 10);
+    }
 
 }

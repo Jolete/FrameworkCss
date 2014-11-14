@@ -246,13 +246,13 @@ height : 100px; }
 		bottom:0;
 		width: 20px;
 		background-color: $grey;
-		@include border-radius(0,0,$radius, $radius);
+		@include border-radius-spec(0,0,$radius, $radius);
 		@include transition(all $animationtime ease-in-out);
 	}
 	&:hover .cursor {
 		left: 100%;
 		margin-left: -20px;
-		@include border-radius($radius, $radius,0,0);
+		@include border-radius-spec($radius, $radius,0,0);
 			}
 }
 .hover {

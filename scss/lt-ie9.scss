@@ -16,25 +16,25 @@ $media-queries-supported : false;
 
 @import "lib/placeholders.scss";
 
-@import "componentes/reset.scss";
+@import "base/reset.scss";
 
-@import "componentes/fuentes.scss";
+@import "base/fuentes.scss";
 
-@import "componentes/links.scss";
+@import "base/links.scss";
 
 @import "componentes/tablas.scss";
 
 @import "componentes/botones.scss";
 
-@import "componentes/elementos.scss";
+@import "base/elementos.scss";
 
-@import "componentes/tipografia.scss";
+@import "base/tipografia.scss";
 
 @import "componentes/navegacion.scss";
 
 @import "componentes/paginacion.scss";
 
-@import "componentes/formularios.scss";
+@import "base/formularios.scss";
 
 @import "layout/sitio.scss";
 

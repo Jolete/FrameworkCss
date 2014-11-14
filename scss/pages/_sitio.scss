@@ -28,7 +28,7 @@
 	width : device-width;
 }
 
-html {
+html.sitio {
 	background : $background;
 	font-size : 100%;
 	-webkit-overflow-scrolling : touch;
@@ -37,7 +37,7 @@ html {
 	-ms-text-size-adjust : 100%;
 }
 
-body {
+body.sitio {
 	margin : 0;
 	padding : 0;
 	width : 100%;

@@ -1,0 +1,31 @@
+
+
+
+
+
+/*------------------------------------------*\
+    $FUNCTIONS OF COLORS, TINTS AND SHADES
+\*------------------------------------------*/
+
+
+
+
+
+
+/* 
+ * Funcions de colors i ombres
+ */
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+ 
+ // Funciones de colores 
+@function color-opacity($_color, $_opacity) {
+	@return rgba(red($_color), green($_color), blue($_color), $_opacity); 
+}

@@ -62,6 +62,9 @@
 // La clase .ie8-sucks se puede cambiar en la configuración de variables.
 //
 //
+
+
+
 @mixin media-query-bp($breakpoint, $query1: min, $query2: width, $target: "") {
 
 	// Check if media queries are supported
@@ -82,12 +85,6 @@
 			@content;
 		}
 	}
-}
-
-
-@mixin font-size($font-size: 16){
-    font-size:($font-size)*1px;
-    font-size:($font-size / $basefontsize)*1rem;
 }
 
   /**
@@ -112,45 +109,32 @@
 }
 
 @mixin align-items($align) {
-	-webkit-align-items : $align;
-	-moz-align-items : $align;
-	-o-align-items : $align;
-	align-items : $align;
+	@include prefixer (align-items, $align, webkit moz ms o spec );
 }
 
 @mixin flex($flex, $width) {
-	-webkit-box-flex : $flex;
-	-moz-box-flex : $flex;
+	@include prefixer (box-flex, $flex, webkit moz);
+	@include prefixer (flex, $flex, webkit ms spec);
+
 	width : $width;
-	-webkit-flex : $flex;
-	-ms-flex : $flex;
-	flex : $flex;
 }
+	
 
 @mixin order($order) {
-	-webkit-box-ordinal-group : $order;
-	-moz-box-ordinal-group : $order;
-	-ms-flex-order : $order;
-	-webkit-order : $order;
-	order : $order;
+	@include prefixer (box-ordinal-group, $order, webkit moz);
+	@include prefixer (flex-order, $order, ms);
+	@include prefixer (order, $order, webkit spec);
 }
 
 // $include flex-start(VALUE) (flex-start | flex-end | center | space-between | space-around)
 @mixin content-justify($justify) {
-	-webkit-content-justify : $justify;
-	-moz-content-justify : $justify;
-	-o-content-justify : $justify;
-	content-justify : $justify;
+	@include prefixer (content-justify, $justify, wwebkit moz o spec);
 }
 
 // $include flex-direction(VALUE) (row | row-reverse | column | column-reverse)
 @mixin flex-direction($direction) {
-	-webkit-flex-direction : $direction;
-	-moz-flex-direction : $direction;
-	-o-flex-direction : $direction;
-	flex-direction : $direction;
+	@include prefixer (flex-direction, $direction, wwebkit moz o spec);
 }
-
 
 
 // gradients
@@ -186,37 +170,43 @@
 	background-repeat : repeat-x;
 }
 
-// .bordered(COLOR, COLOR, COLOR, COLOR);
-@mixin bordered($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
-	border-top : solid 1px $top-color;
-	border-left : solid 1px $left-color;
-	border-right : solid 1px $right-color;
-	border-bottom : solid 1px $bottom-color;
+@mixin border-radius2($bordersize: 0) {
+	//@include prefixer(bordersize, $bordersize, webkit moz o ms spec);
+	// -webkit-border-top-right-radius : $bordersize;
+	// -webkit-border-bottom-right-radius : $bordersize;
+	// -webkit-border-bottom-left-radius : $bottomleft;
+	// -webkit-border-top-left-radius : $topleft;
+	// -moz-border-radius-topright : $topright;
+	// -moz-border-radius-bottomright : $bottomright;
+	// -moz-border-radius-bottomleft : $bottomleft;
+	// -moz-border-radius-topleft : $topleft;
+	// border-top-right-radius : $bordersize;
+	// border-bottom-right-radius : $bordersize;
+	// border-bottom-left-radius : $bordersize;
+	// border-top-left-radius : $topleft;
+	// -webkit-background-clip : padding-box;
+	// -moz-background-clip : padding;
+	// background-clip : padding-box;
 }
 
-// .border-radius(VALUE,VALUE,VALUE,VALUE);
-@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
-	-webkit-border-top-right-radius : $topright;
-	-webkit-border-bottom-right-radius : $bottomright;
-	-webkit-border-bottom-left-radius : $bottomleft;
-	-webkit-border-top-left-radius : $topleft;
-	-moz-border-radius-topright : $topright;
-	-moz-border-radius-bottomright : $bottomright;
-	-moz-border-radius-bottomleft : $bottomleft;
-	-moz-border-radius-topleft : $topleft;
-	border-top-right-radius : $topright;
-	border-bottom-right-radius : $bottomright;
-	border-bottom-left-radius : $bottomleft;
-	border-top-left-radius : $topleft;
-	-webkit-background-clip : padding-box;
-	-moz-background-clip : padding;
-	background-clip : padding-box;
+@mixin border-image($_border-image-source, $_border-image-slice, $_border-image-width, $_border-image-repeat ) {
+	@if not $_border-image-source {
+		-webkit-border-image: none!important; /* Safari 3.1-5 */
+    	-moz-border-image: none!important; /* Motzilla */
+	    -o-border-image: none!important; /* Opera 11-12.1 */
+	    border-image: none!important;
+  	}
+  	else {
+  		-webkit-border-image: url($_border-image-source) $_border-image-slice $_border-image-width $_border-image-repeat; /* Safari 3.1-5 */
+		-moz-border-image: url($_border-image-source) $_border-image-slice $_border-image-width $_border-image-repeat; /* Motzilla */
+	    -o-border-image: url($_border-image-source) $_border-image-slice $_border-image-width $_border-image-repeat; /* Opera 11-12.1 */
+	    border-image: url($_border-image-source) $_border-image-slice $_border-image-width $_border-image-repeat;
+    }
 }
 
 // .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
 @mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
-	-webkit-box-shadow : $shadow;
-	box-shadow : $shadow;
+	@include prefixer (box-shadow, $shadow, webkit spec );
 }
 
 // .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
@@ -226,66 +216,25 @@
 	box-shadow : $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
 }
 
-// .opacity(VALUE);
-@mixin opacity($opacity : .5) {
-	-webkit-opacity : $opacity;
-	-moz-opacity : $opacity;
-	opacity : $opacity;
-}
+@mixin text-shadow($text-shadow) {
+	@include prefixer (text-shadow, $text-shadow, webkit moz spec);
+}	
 
-// .rotate(VALUEdeg);
-@mixin rotate($deg) {
-	-webkit-transform : rotate($deg);
-	-moz-transform : rotate($deg);
-	-ms-transform : rotate($deg);
-	-o-transform : rotate($deg);
-	transform : rotate($deg);
-}
 
-// .scale(VALUE);
-@mixin scale($ratio) {
-	-webkit-transform : scale($ratio);
-	-moz-transform : scale($ratio);
-	-ms-transform : scale($ratio);
-	-o-transform : scale($ratio);
-	transform : scale($ratio);
-}
 
-// .skew(VALUE, VALUE);
-@mixin skew($x: 0, $y: 0) {
-	-webkit-transform : skew($x, $y);
-	-moz-transform : skew($x, $y);
-	-ms-transform : skew($x, $y);
-	-o-transform : skew($x, $y);
-	transform : skew($x, $y);
-}
 
-// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
-@mixin transition($transition) {
-	-webkit-transition : $transition;
-	-moz-transition : $transition;
-	-ms-transition : $transition;
-	-o-transition : $transition;
-	transition : $transition;
-}
 
-// .translate(VALUE, VALUE)
-@mixin translate($x: 0, $y: 0) {
-	-webkit-transform : translate($x, $y);
-	-moz-transform : translate($x, $y);
-	-ms-transform : translate($x, $y);
-	-o-transform : translate($x, $y);
-	transform : translate($x, $y);
-}
 
-@mixin translate3d($x: 0, $y: 0, $z: 0) {
-	-webkit-transform : translate($x, $y, $z);
-	-moz-transform : translate($x, $y, $z);
-	-ms-transform : translate($x, $y, $z);
-	-o-transform : translate($x, $y, $z);
-	transform : translate($x, $y, $z);
-}
 
+// .background(VALUE);
+@mixin background($_color) {
+	//background-color : hsla(hue($color), saturation($color), lightness($color), $alpha);
+	//@include prefixer(background-size, $size, webkit moz o spec );
+	-webkit-background: $_color;
+    -moz-background: $_color;
+    -o-background: $_color;
+    background: $_color;
+}
 
 // .background-alpha(VALUE VALUE);
 @mixin background-alpha($color: $white, $alpha: 1) {
@@ -294,6 +243,7 @@
 
 // .background-size(VALUE VALUE);
 @mixin background-size($size){
+	//@include prefixer(background-size, $size, webkit moz o spec );
 	-webkit-background-size : $size;
 	-moz-background-size : $size;
 	-o-background-size : $size;
@@ -323,19 +273,6 @@
 	overflow : auto;
 }
 
-// .userselect(VALUE) (all, element, none, text)
-
-@mixin user-select($select) {
-	-webkit-user-select : $select;
-	-moz-user-select : $select;
-	-o-user-select : $select;
-	user-select : $select;
-}
-
-
-
-
-
 // .columns(250px, 0, 24px, COLOR, solid, 1px)
 
 @mixin columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #eee, $columnRuleStyle: solid, $columnRuleWidth: 1px) {
@@ -360,33 +297,6 @@
 }
 
 
-//
-//Creamos prefijos para todo dios
-//
-//   `@include vendor(border-radius, 4px);`
-//
-//
-@mixin vendor($property, $value...){
-    -webkit-#{$property}:$value;
-       -moz-#{$property}:$value;
-        -ms-#{$property}:$value;
-         -o-#{$property}:$value;
-            #{$property}:$value;
+@mixin appearance ($appearance) {
+	@include prefixer (appearance, $appearance, webkit moz ms o spec);
 }
-
-/* 
- * Función para controlar el index 
- */
- 
-@function z($layer) {
-  @if not map-has-key($z-layers, $layer) {
-    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
-  }
- 
-  @return map-get($z-layers, $layer);
-}
-
-@function color-opacity($_color, $_opacity) {
-	@return rgba(red($_color), green($_color), blue($_color), $_opacity); 
-}
-

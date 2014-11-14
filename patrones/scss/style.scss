@@ -9,38 +9,45 @@
  * y optimizar lo máximo posible.
  */
 
-@import "../../scss/_contenido.scss";
+@import "../../scss/docs/_contenido.scss";
 
-@import "../../scss/lib/_variables.scss";
+@import "../../scss/base/_variables.scss";
 
-@import "../../scss/lib/_mixins.scss";
+// Custom Helpers & Functions
+@import "../../scss/mixins/_mixins.scss";
+@import "../../scss/functions/_functions.scss";
 
-@import "../../scss/lib/_placeholders.scss";
-
+// base SASS
 @import "../../scss/base/_reset.scss";
-
 @import "../../scss/base/_fuentes.scss";
+@import "../../scss/base/_tipografia.scss";
 
-@import "../../scss/base/_links.scss";
+@import "../../scss/componentes/_placeholders.scss";
+
+@import "../../scss/componentes/_links.scss";
 
 @import "../../scss/componentes/_tablas.scss";
 
 @import "../../scss/componentes/_botones.scss";
 
-@import "../../scss/base/_elementos.scss";
-
-@import "../../scss/base/_tipografia.scss";
+@import "../../scss/componentes/_elementos.scss";
 
 @import "../../scss/componentes/_navegacion.scss";
 
 @import "../../scss/componentes/_paginacion.scss";
 
-@import "../../scss/base/_formularios.scss";
-
-@import "../../scss/layout/_sitio.scss";
+@import "../../scss/componentes/_alertas.scss";
 
 @import "../../scss/componentes/_texturas.scss";
 
+
+@import "../../scss/layout/_formularios.scss";
 @import "../../scss/layout/_breakpoints.scss";
+
+
+// Specific pages SASS
+@import "../../scss/pages/_sitio.scss";
+//@import "../../scss/pages/_inicio.scss";
+
 
 @import "../scss/_patron.scss";

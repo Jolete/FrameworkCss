@@ -1,0 +1,16 @@
+// Opacity
+
+// .opacity(VALUE);
+@mixin opacity($opacity : .5) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+// .opacity(VALUE);
+// @mixin opacity($opacity : .5) {
+// 	-webkit-opacity : $opacity;
+// 	-moz-opacity : $opacity;
+// 	opacity : $opacity;
+// }

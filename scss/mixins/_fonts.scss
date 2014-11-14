@@ -1,0 +1,63 @@
+
+
+
+
+
+/*------------------------------------*\
+    $FONTS MIXINS
+\*------------------------------------*/
+
+
+
+// Mixins de fuentes que permiten tratar incompatibilidades de navegadores
+//
+//  $font-size: valor en pixels. Por defecto aplicamos $basefontsize (valor de  16px que es un valor por defecto más habitual ) 
+//
+//  USO:
+//
+//  **************************************************************************
+//
+// .texto {
+// 	color:red;
+// 	@include font-size(18);
+// 	}
+// }
+//
+//  **************************************************************************
+//
+// Compilaría:
+//
+//  **************************************************************************
+//
+// .texto {
+// 		color: red; 
+// 		font-size: 18px;
+// 		font-size: 1,2rem;
+//  }
+//
+//  **************************************************************************
+//
+// Y en la hoja de estilos para navegadores que no soportan rems
+// compilaría lo siguiente (componentes/no-mq.scss):
+//
+//  **************************************************************************
+//
+// .texto {
+// 		color: red; 
+//	}
+// .ie8-sucks .texto {
+//   	color: blue; 
+//	 	font-size: 18px;
+//  }
+//
+//  **************************************************************************
+//
+// La clase .ie8-sucks se puede cambiar en la configuración de variables.
+//
+
+
+
+@mixin font-size($font-size: $basefontsize){
+    font-size:($font-size)*1px;
+    font-size:($font-size / $basefontsize)*1rem;
+}

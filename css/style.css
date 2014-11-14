@@ -57,7 +57,8 @@
  * Definimos y configuramos las variables CSS que vamos a utilizar
  *
  */
-/*------------------------------------*\
+/*------------------------------------
+*\
     $BREAKPOINTS
 \*------------------------------------*/
 /**
@@ -71,7 +72,7 @@
  * esta es la clase que se añadirá a todos los elementos.
  */
 /*------------------------------------*\
-    $IMAGE-DIR
+    $DIRECTORIES
 \*------------------------------------*/
 /**
  * Con agregar esta variable a las imágenes declaradas en CSS apañamos:
@@ -123,48 +124,55 @@
 /*------------------------------------*\
     $MIXINS
 \*------------------------------------*/
+/*------------------------------------*\
+    $TRANSFORMS MIXINS
+\*------------------------------------*/
+/*
+// Transformations
+*/
+/*------------------------------------*\
+    $VENDOR-PREFIXES
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
 /**
 * Centrar y dar un ancho máximo igual a $pagemaxwidth.
 */
+/*------------------------------------*\
+    $FONTS MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BORDER 
+\*------------------------------------*/
+/*
+/  Gestionamos todos los mixins referente a los bordes, 
+/  el tamaño, radio, color, etc.
+*/
+/*------------------------------------*\
+//    Colores 
+\*------------------------------------*/
+/*------------------------------------*\
+//    Radios
+\*------------------------------------*/
+/*------------------------------------------*\
+    $FUNCTIONS 
+\*------------------------------------------*/
+/*
+/ 	All the functions files imported here
+*/
+/*------------------------------------------*\
+    $FUNCTIONS OF COLORS, TINTS AND SHADES
+\*------------------------------------------*/
+/* 
+ * Funcions de colors i ombres
+ */
+/*------------------------------------*\
+    $FUNCTIONS OF CONVERSIONS
+\*------------------------------------*/
 /* 
  * Función para controlar el index 
  */
-/*------------------------------------*\
-    $PLACEHOLDERS
-\*------------------------------------*/
-/**
-* The ghost, nudged to maintain perfect centering
-*/
-/**
-* Escondemos el texto solo VISUALMENTE
-*/
-/**
-* Escondemos el texto de VISUALMENTE y SCREENREADERS
-*/
-/**
-* Escondemos pero mantenemos layout.
-*/
-/**
-* Visualmente escondido, pero se puede detectar con teclado (focus).
-*/
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  position: static;
-  clip: auto;
-  height: auto;
-  width: auto;
-  margin: 0;
-  overflow: visible;
-}
-
-/**
-* Clear floats.
-* http://bit.ly/1e3YaBH
-*/
-/**
-* Gradientes los ocnvertimos en placeholders porque imprime 10 millones de
-* líneas inútiles en el CSS
-*/
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
@@ -200,8 +208,8 @@ article, aside, figure, footer, header, hgroup, nav, section {
  */
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot");
-  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -253,424 +261,6 @@ you can use the generic selector below, but it's slower:
 
 .icon-eye:before {
   content: "\e002";
-}
-
-/*------------------------------------*\
-    $LINKS
-\*------------------------------------*/
-a {
-  text-decoration: none;
-  color: #2194d6;
-}
-a:visited {
-  color: #2194d6;
-}
-a:hover {
-  text-decoration: underline;
-  color: #1a75aa;
-}
-a:focus {
-  outline: thin dotted;
-  color: #1a75aa;
-}
-a:hover, a:active {
-  outline: 0;
-}
-
-/*------------------------------------*\
-    $TABLAS
-\*------------------------------------*/
-table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1.5em;
-  border-collapse: collapse;
-  border-spacing: 0;
-  background-color: transparent;
-}
-table th,
-table td {
-  padding: 8px;
-  vertical-align: top;
-  border-top: 1px solid #cce7f7;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.5em;
-  text-align: left;
-}
-table th {
-  font-weight: bold;
-}
-table thead th {
-  vertical-align: bottom;
-}
-table colgroup + thead tr:first-child th,
-table colgroup + thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-  border-top: 0;
-}
-table tbody + tbody {
-  border-top: 2px solid #cce7f7;
-}
-table tbody tr td,
-table tbody tr th {
-  -webkit-transition: background-color 0.25s 0 linear;
-  -moz-transition: background-color 0.25s 0 linear;
-  -ms-transition: background-color 0.25s 0 linear;
-  -o-transition: background-color 0.25s 0 linear;
-  transition: background-color 0.25s 0 linear;
-}
-table tbody tr:hover td,
-table tbody tr:hover th {
-  background-color: #f8fcfe;
-}
-
-.table-condensed th,
-.table-condensed td {
-  padding: 4px 5px;
-}
-
-.table-bordered {
-  border: 1px solid #cce7f7;
-  border-left: 0;
-  border-collapse: separate;
-  *border-collapse: collapsed;
-}
-.table-bordered th,
-.table-bordered td {
-  border-left: 1px solid #cce7f7;
-}
-.table-bordered thead:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child td {
-  border-top: 0;
-}
-
-.table-striped tbody tr:nth-child(odd) td,
-.table-striped tbody tr:nth-child(odd) th {
-  background-color: white;
-}
-
-/*------------------------------------*\
-    $BOTONES
-\*------------------------------------*/
-/*
- * Definimos los botones y sus variantes
- */
-/**
-* .btn es la clase principal para definir un botón
-*/
-.btn {
-  display: inline-block;
-  line-height: 2.25em;
-  color: #262626;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 100%;
-  white-space: nowrap;
-  background-color: #31a0df;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 1em;
-  padding-left: 1em;
-  border-radius: 2px;
-  	/**
-   	* Nadie quiere un botón con texto subrayado cuando
-   	* hacemos hover.
-   	*/
-}
-.btn:hover {
-  text-decoration: none;
-}
-.btn:active, .btn:focus {
-  outline: none;
-}
-.btn:visited {
-  color: #262626;
-}
-
-/*------------------------------------*\
-    $BOTONES-VARIANTES
-\*------------------------------------*/
-/**
- * Variantes de los botones: color para dar sensaciones.
- *
- */
-/**
-* Inputs con estilo de botones
-*/
-input[type="submit"].btn:hover {
-  border-color: #1e85c0;
-}
-
-/**
-* Botón no disponible
-*/
-.btn--disabled {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-  cursor: default;
-}
-
-/**
-* Botón de Error
-*/
-.btn--error {
-  background-color: #da4f49;
-  color: #48110f;
-}
-.btn--error:hover {
-  color: #fcf3f3;
-}
-.btn--error:visited {
-  color: #48110f;
-}
-
-/**
-* Botón de Info
-*/
-.btn--info {
-  background-color: #a5dddf;
-  color: #308588;
-}
-.btn--info:hover {
-  color: white;
-}
-.btn--info:visited {
-  color: #308588;
-}
-
-/**
-* Botón principal
-*/
-.btn--primary {
-  background-color: #2194d6;
-  color: white;
-}
-.btn--primary:hover {
-  color: #cce7f7;
-}
-.btn--primary:visited {
-  color: #061a25;
-}
-
-/**
-* Botón de OK
-*/
-.btn--success {
-  background-color: #5bb75b;
-  color: #153115;
-}
-.btn--success:hover {
-  color: #e9f5e9;
-}
-.btn--success:visited {
-  color: #153115;
-}
-
-/**
-* Botón de advertencia
-*/
-.btn--warning {
-  background-color: #da4f49;
-  color: #48110f;
-}
-.btn--warning:hover {
-  color: #fcf3f3;
-}
-.btn--warning:visited {
-  color: #48110f;
-}
-
-.btn--inactive,
-.btn--inactive:hover,
-.btn--inactive:active,
-.btn--inactive:focus {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-  cursor: default;
-}
-
-/*------------------------------------*\
-    $BOTONES-TAMAÑOS
-\*------------------------------------*/
-/**
- * Variantes de los botones por tamaño.
- *
- */
-.btn--mini {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  line-height: 1.5;
-}
-
-.btn--small {
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-  line-height: 2;
-}
-
-.btn--large {
-  padding-right: 3em;
-  padding-left: 3em;
-  line-height: 3;
-}
-
-/*------------------------------------*\
-    $BOTONES-GRUPOS
-\*------------------------------------*/
-/**
- * Con esta clase podemos agrupar los botones
- * en grupos horizontales.
- *
- */
-.btn--group {
-  position: relative;
-  *margin-left: .3em;
-}
-
-.btn--group .btn {
-  position: relative;
-  border-radius: 0;
-  float: left;
-  margin-left: -1px;
-}
-
-.btn--group .btn:first-child {
-  margin-left: 0;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn:last-child {
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn.large:first-child {
-  margin-left: 0;
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn.large:last-child {
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS
-\*------------------------------------*/
-hr {
-  clear: both;
-  display: block;
-  margin: 3em 0;
-  padding: 0;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #243a50;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS-IMÁGENES
-\*------------------------------------*/
-img {
-  max-width: 100%;
-  border-width: 0;
-  vertical-align: middle;
-  -ms-interpolation-mode: bicubic;
-}
-
-.img--rounded {
-  border-radius: 8px;
-}
-
-.img--polaroid {
-  padding: 12px;
-  background-color: white;
-  border: 1px solid #243a50;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.img--circle {
-  border-radius: 100%;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS-FIGURE
-\*------------------------------------*/
-figure {
-  margin-bottom: 1.5em;
-}
-figure img {
-  margin-bottom: 0.375em;
-}
-figure figcaption {
-  display: block;
-  font-weight: normal;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-style: italic;
-  color: gray;
 }
 
 /*------------------------------------*\
@@ -882,6 +472,483 @@ sup {
 
 sub {
   bottom: -.25em;
+}
+
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+/**
+* The ghost, nudged to maintain perfect centering
+*/
+/**
+* Escondemos el texto solo VISUALMENTE
+*/
+/**
+* Escondemos el texto de VISUALMENTE y SCREENREADERS
+*/
+/**
+* Escondemos pero mantenemos layout.
+*/
+/**
+* Visualmente escondido, pero se puede detectar con teclado (focus).
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  position: static;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+}
+
+/**
+* Clear floats.
+* http://bit.ly/1e3YaBH
+*/
+/**
+* Gradientes los ocnvertimos en placeholders porque imprime 10 millones de
+* líneas inútiles en el CSS
+*/
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+a {
+  text-decoration: none;
+  color: #e9f8d6;
+}
+a:visited {
+  color: #e9f8d6;
+}
+a:hover {
+  text-decoration: underline;
+  color: #d2f1aa;
+}
+a:focus {
+  outline: thin dotted;
+  color: #d2f1aa;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
+/*------------------------------------*\
+    $TABLAS
+\*------------------------------------*/
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+table th,
+table td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid white;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  text-align: left;
+}
+table th {
+  font-weight: bold;
+}
+table thead th {
+  vertical-align: bottom;
+}
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+table tbody + tbody {
+  border-top: 2px solid white;
+}
+table tbody tr td,
+table tbody tr th {
+  -webkit-transition: background-color 0.25s 0 linear;
+  -moz-transition: background-color 0.25s 0 linear;
+  -o-transition: background-color 0.25s 0 linear;
+  transition: background-color 0.25s 0 linear;
+}
+table tbody tr:hover td,
+table tbody tr:hover th {
+  background-color: white;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+
+.table-bordered {
+  border: 1px solid white;
+  border-left: 0;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+}
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid white;
+}
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: white;
+}
+
+/*------------------------------------*\
+    $BOTONES
+\*------------------------------------*/
+/*
+ * Definimos los botones y sus variantes
+ */
+/**
+* .btn es la clase principal para definir un botón
+*/
+.btn {
+  display: inline-block;
+  line-height: 2.25em;
+  color: #262626;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 100%;
+  white-space: nowrap;
+  background-color: #f5fcec;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  	/**
+   	* Nadie quiere un botón con texto subrayado cuando
+   	* hacemos hover.
+   	*/
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn:active, .btn:focus {
+  outline: none;
+}
+.btn:visited {
+  color: #262626;
+}
+
+/*------------------------------------*\
+    $BOTONES-VARIANTES
+\*------------------------------------*/
+/**
+ * Variantes de los botones: color para dar sensaciones.
+ *
+ */
+/**
+* Inputs con estilo de botones
+*/
+input[type="submit"].btn:hover {
+  border-color: #ddf4c0;
+}
+
+/*------------------------------------*\
+    $BOTONES-ESTADOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por estado.
+ *
+ */
+/**
+* Botón no disponible
+*/
+.btn--disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
+
+/**
+* Botón de Error
+*/
+.btn--error {
+  background-color: #da4f49;
+  color: #48110f;
+}
+.btn--error:hover {
+  color: #fcf3f3;
+}
+.btn--error:visited {
+  color: #48110f;
+}
+
+/**
+* Botón de Info
+*/
+.btn--info {
+  background-color: #a5dddf;
+  color: #308588;
+}
+.btn--info:hover {
+  color: white;
+}
+.btn--info:visited {
+  color: #308588;
+}
+
+/**
+* Botón principal
+*/
+.btn--primary {
+  background-color: #e9f8d6;
+  color: white;
+}
+.btn--primary:hover {
+  color: white;
+}
+.btn--primary:visited {
+  color: #8cda28;
+}
+
+/**
+* Botón de OK
+*/
+.btn--success {
+  background-color: #5bb75b;
+  color: #153115;
+}
+.btn--success:hover {
+  color: #e9f5e9;
+}
+.btn--success:visited {
+  color: #153115;
+}
+
+/**
+* Botón de advertencia
+*/
+.btn--warning {
+  background-color: #da4f49;
+  color: #48110f;
+}
+.btn--warning:hover {
+  color: #fcf3f3;
+}
+.btn--warning:visited {
+  color: #48110f;
+}
+
+.btn--inactive,
+.btn--inactive:hover,
+.btn--inactive:active,
+.btn--inactive:focus {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
+
+/*------------------------------------*\
+    $BOTONES-TAMAÑOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por tamaño.
+ *
+ */
+.btn--mini {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 1.5;
+}
+
+.btn--small {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 2;
+}
+
+.btn--large {
+  padding-right: 3em;
+  padding-left: 3em;
+  line-height: 3;
+}
+
+/*------------------------------------*\
+    $BOTONES-ESTADOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por forma.
+ *
+ */
+.btn--circular {
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: inset 0 10px 15px rgba(255, 255, 255, 0.35), inset 0 -10px 15px rgba(0, 0, 0, 0.05), inset 10px 0 15px rgba(0, 0, 0, 0.05), inset -10px 0 15px rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: 6em;
+  width: 6em;
+  background-color: cyan;
+}
+
+/*------------------------------------*\
+    $BOTONES-GRUPOS
+\*------------------------------------*/
+/**
+ * Con esta clase podemos agrupar los botones
+ * en grupos horizontales.
+ *
+ */
+.btn--group {
+  position: relative;
+  *margin-left: .3em;
+}
+
+.btn--group .btn {
+  position: relative;
+  border-radius: 0;
+  float: left;
+  margin-left: -1px;
+}
+
+.btn--group .btn:first-child {
+  margin-left: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn:last-child {
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn.large:first-child {
+  margin-left: 0;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn.large:last-child {
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS
+\*------------------------------------*/
+hr {
+  clear: both;
+  display: block;
+  margin: 3em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #243a50;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS-IMÁGENES
+\*------------------------------------*/
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+.img--rounded {
+  border-radius: 8px;
+}
+
+.img--polaroid {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #243a50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.img--circle {
+  border-radius: 100%;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS-FIGURE
+\*------------------------------------*/
+figure {
+  margin-bottom: 1.5em;
+}
+figure img {
+  margin-bottom: 0.375em;
+}
+figure figcaption {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: gray;
 }
 
 /*------------------------------------*\
@@ -1108,7 +1175,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -1154,7 +1221,6 @@ select:hover {
 }
 
 input[type="image"],
-input[type="checkbox"],
 input[type="radio"] {
   width: auto;
   height: auto;
@@ -1166,7 +1232,6 @@ input[type="radio"] {
   border: 0 \9;
 }
 
-input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1233,28 +1298,20 @@ input[type="hidden"] {
   display: none;
 }
 
-.radio,
-.checkbox {
+.radio {
   padding-left: 18px;
   font-weight: normal;
 }
 
 .radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  float: left;
-  margin-left: -18px;
-}
-
-.radio.inline,
-.checkbox.inline {
+.radio.inline {
   display: inline-block;
   padding-top: 5px;
   margin-bottom: 0;
   vertical-align: middle;
 }
 
-.radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline {
+.radio.inline + .radio.inline {
   margin-left: 10px;
 }
 
@@ -1264,22 +1321,22 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
   opacity: 0.5;
+  filter: alpha(opacity=50);
   cursor: not-allowed;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #2194d6, 40%;
+  border-color: #e9f8d6, 40%;
   outline: 0;
   outline: thin dotted \9;
+  -webkit-box-shadow: 0px 0px 6px 0px #1a1a1a;
+  box-shadow: 0px 0px 6px 0px #1a1a1a;
 }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
-input[type="checkbox"]:focus,
 select:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1384,57 +1441,14 @@ input:required:focus:valid {
 }
 
 /*------------------------------------*\
-    $SITIO
-\*------------------------------------*/
-@-webkit-viewport {
-  width: device-width;
-}
-@-moz-viewport {
-  width: device-width;
-}
-@-ms-viewport {
-  width: device-width;
-}
-@-o-viewport {
-  width: device-width;
-}
-@viewport {
-  width: device-width;
-}
-html {
-  background: white;
-  font-size: 100%;
-  -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: white;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5em;
-  color: #262626;
-}
-
-/**
-* A partir de aquí es donde debes escribir los estilos de posicionamiento
-* y detalles que forman tu web. Disfruta!
-*/
-/*------------------------------------*\
-    $TEXTURAS
+    $ALERTAS
 \*------------------------------------*/
 .alert {
   margin-bottom: 1.5em;
   padding: 8px 35px 8px 14px;
   background-color: #fce4cf;
   border: 1px solid #f6ae6f;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
   color: #904809;
@@ -1510,10 +1524,9 @@ body {
   white-space: nowrap;
   border-radius: 2px;
   color: #262626;
-  background-color: #2194d6;
+  background-color: #e9f8d6;
   -webkit-transition: background-color 0.25s 0 linear;
   -moz-transition: background-color 0.25s 0 linear;
-  -ms-transition: background-color 0.25s 0 linear;
   -o-transition: background-color 0.25s 0 linear;
   transition: background-color 0.25s 0 linear;
 }
@@ -1567,9 +1580,9 @@ body {
   border-radius: 2px;
   margin-bottom: 1.5em;
   background-color: white;
-  border: 1px solid #a7d6f1;
-  -webkit-box-shadow: inset 0 1px 10px #d3ebf8;
-  box-shadow: inset 0 1px 10px #d3ebf8;
+  border: 1px solid #d0f0a8;
+  -webkit-box-shadow: inset 0 1px 10px #e8f8d3;
+  box-shadow: inset 0 1px 10px #e8f8d3;
 }
 .well p:last-child {
   margin-bottom: 0;
@@ -1585,16 +1598,19 @@ body {
 
 ::-moz-selection {
   background-color: white;
-  color: #2194d6;
+  color: #e9f8d6;
   text-shadow: none;
 }
 
 ::selection {
   background-color: white;
-  color: #2194d6;
+  color: #e9f8d6;
   text-shadow: none;
 }
 
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
 /*------------------------------------*\
     $BREAKPOINTS
 \*------------------------------------*/
@@ -1605,4 +1621,558 @@ body {
   /*
    * Breakpoint para dispositivos retina
    */
+}
+/*------------------------------------*\
+    $SITIO
+\*------------------------------------*/
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+html.sitio {
+  background: white;
+  font-size: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: white;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body.sitio {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5em;
+  color: #262626;
+}
+
+/**
+* A partir de aquí es donde debes escribir los estilos de posicionamiento
+* y detalles que forman tu web. Disfruta!
+*/
+/*------------------------------------*\
+    $INICIO_VERSION
+\*------------------------------------*/
+html.inicio, html.inicio body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background: radial-gradient(ellipse at center center, #7799bb 0%, #3c5977 100%);*/
+  background: #7799bb;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3OTliYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYzU5NzciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  /* assignem gradient de colors */
+  background: -moz-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #7799bb), color-stop(100%, #3c5977));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #7799bb 0%, #3c5977 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7799bb', endColorstr='#3c5977',GradientType=1 );
+  /* IE6-8 */
+  font-size: 200px;
+  height: 100%;
+}
+html.inicio body, html.inicio body body {
+  font: .1rem 'Open Sans', sans-serif;
+  font-size: 2px;
+  font-size: 0.125rem;
+  background: url("./../imgs/bg/mapa.png") center center no-repeat;
+}
+html.inicio .logo, html.inicio body .logo {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  border: none !important;
+  -webkit-border-image: none !important;
+  /* Safari 3.1-5 */
+  -moz-border-image: none !important;
+  /* Motzilla */
+  -o-border-image: none !important;
+  /* Opera 11-12.1 */
+  border-image: none !important;
+}
+html.inicio .logo else, html.inicio body .logo else {
+  -webkit-border-image: url();
+  /* Safari 3.1-5 */
+  -moz-border-image: url();
+  /* Motzilla */
+  -o-border-image: url();
+  /* Opera 11-12.1 */
+  border-image: url();
+}
+html.inicio .center, html.inicio body .center {
+  margin: auto;
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+  text-align: center;
+}
+html.inicio .title, html.inicio body .title {
+  font: 0.2rem 'Open Sans', sans-serif;
+  font-size: 2px;
+  font-size: 0.125rem;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+html.inicio .producte, html.inicio body .producte {
+  display: block;
+  font: 0.15rem 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-text-shadow: 2px 2px 4px #000fff;
+  -moz-text-shadow: 2px 2px 4px #000fff;
+  text-shadow: 2px 2px 4px #000fff;
+}
+html.inicio .elements, html.inicio body .elements {
+  display: block;
+  font: 0.12rem 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-text-shadow: 2px 2px 4px #000fff;
+  -moz-text-shadow: 2px 2px 4px #000fff;
+  text-shadow: 2px 2px 4px #000fff;
+}
+html.inicio .version, html.inicio body .version {
+  display: block;
+  font: 0.10rem 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 2px 2px 4px #000FFF;
+  margin-top: 20px;
+}
+html.inicio footer, html.inicio body footer {
+  text-align: center;
+  font-family: Arial, Helvetica, Sans-Serif;
+  background-color: transparent;
+  position: absolute;
+  vertical-align: center;
+  bottom: 0px;
+  right: 0;
+}
+html.inicio footer a, html.inicio body footer a {
+  color: white;
+  text-decoration: none;
+  background-image: none;
+  background-color: transparent;
+}
+html.inicio footer a:hover, html.inicio body footer a:hover {
+  color: #404040;
+  text-decoration: underline;
+}
+html.inicio footer a:active, html.inicio body footer a:active {
+  color: #404040;
+  text-decoration: none;
+}
+html.inicio a, html.inicio body a {
+  margin-top: 5%;
+  color: white;
+  text-decoration: none;
+  background-image: none;
+  background-color: transparent;
+  font-size: .1rem;
+}
+html.inicio a:hover, html.inicio body a:hover {
+  color: #404040;
+  text-decoration: underline;
+}
+html.inicio a:active, html.inicio body a:active {
+  color: #404040;
+  text-decoration: none;
+}
+
+/*------------------------------------*\
+    $LOGIN/INICIO
+\*------------------------------------*/
+html.login, html.login body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background: radial-gradient(ellipse at center center, #7799bb 0%, #3c5977 100%);*/
+  background: #7799bb;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3OTliYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYzU5NzciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  /* assignem gradient de colors */
+  background: -moz-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #7799bb), color-stop(100%, #3c5977));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #7799bb 0%, #3c5977 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #7799bb 0%, #3c5977 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7799bb', endColorstr='#3c5977',GradientType=1 );
+  /* IE6-8 */
+  font-size: 200%;
+  height: 100%;
+}
+html.login body, html.login body body {
+  font: .1rem 'Open Sans', sans-serif;
+  font-size: 2px;
+  font-size: 0.125rem;
+  background: url("../../../../commons/frameworkcss/imgs/bg/mapa.png") center center no-repeat;
+}
+html.login .logo, html.login body .logo {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: auto;
+  border: none !important;
+  -webkit-border-image: none !important;
+  /* Safari 3.1-5 */
+  -moz-border-image: none !important;
+  /* Motzilla */
+  -o-border-image: none !important;
+  /* Opera 11-12.1 */
+  border-image: none !important;
+}
+html.login .logo else, html.login body .logo else {
+  -webkit-border-image: url();
+  /* Safari 3.1-5 */
+  -moz-border-image: url();
+  /* Motzilla */
+  -o-border-image: url();
+  /* Opera 11-12.1 */
+  border-image: url();
+}
+html.login .center, html.login body .center {
+  margin: auto;
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+  text-align: center;
+}
+html.login footer, html.login body footer {
+  position: relative;
+  text-align: center;
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 0.47rem;
+  background-color: transparent;
+  position: absolute;
+  vertical-align: center;
+  bottom: 2px;
+  right: 0;
+}
+@media all and (min-width: 56.25em) {
+  html.login footer, html.login body footer {
+    bottom: 3%;
+  }
+}
+@media all and (min-width: 68.75em) {
+  html.login footer, html.login body footer {
+    bottom: 1%;
+  }
+}
+html.login footer a, html.login body footer a {
+  color: white;
+  text-decoration: none;
+  background-image: none;
+  background-color: transparent;
+}
+html.login footer a:hover, html.login body footer a:hover {
+  color: #404040;
+  text-decoration: underline;
+}
+html.login footer a:active, html.login body footer a:active {
+  color: #404040;
+  text-decoration: none;
+}
+html.login a, html.login body a {
+  margin-top: 5%;
+  color: white;
+  text-decoration: none;
+  background-image: none;
+  background-color: transparent;
+}
+html.login a:hover, html.login body a:hover {
+  color: #404040;
+  text-decoration: underline;
+}
+html.login a:active, html.login body a:active {
+  color: #404040;
+  text-decoration: none;
+}
+
+.register {
+  font-size: 10px;
+  font-size: 0.625rem;
+  position: relative;
+  margin: auto;
+  margin-top: 3%;
+  width: 55%;
+  padding: 3%;
+  min-height: 360px;
+  max-height: 950px;
+  height: auto;
+  text-align: center;
+  -webkit-background: rgba(33, 66, 99, 0.8);
+  -moz-background: rgba(33, 66, 99, 0.8);
+  -o-background: rgba(33, 66, 99, 0.8);
+  background: rgba(33, 66, 99, 0.8);
+  -webkit-box-shadow: 0 40px 115px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 40px 115px rgba(0, 0, 0, 0.95);
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 20px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  color: white;
+}
+@media all and (min-width: 56.25em) {
+  .register {
+    width: 45%;
+    margin-top: 1%;
+  }
+}
+@media all and (min-width: 68.75em) {
+  .register {
+    width: 40%;
+  }
+}
+
+.register.large {
+  max-height: 700px;
+}
+
+.register h1 {
+  position: relative;
+  top: -75px;
+  left: 25%;
+  width: auto;
+  margin: 0;
+  text-align: center;
+  color: red;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.register h1 span {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  font: 30px fontawesome;
+}
+
+.register input {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #243a50;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.register [placeholder]::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.register [placeholder]:focus::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.register input:-webkit-autofill, .register input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px #2d4965 inset;
+  -webkit-text-fill-color: white;
+}
+
+.register input:focus {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  border: solid 1px white;
+}
+
+.register select {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 40px;
+  color: white;
+  margin: 1% 0 10%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.register .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  font-size: 0.625rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+
+.register .element {
+  font-size: 10px;
+  font-size: 0.625rem;
+  color: #e0cf7d;
+}
+
+#diagnostico {
+  visibility: hidden;
+}
+
+/*------------------------------------*\
+    $GESTOR ELEMENTOS
+\*------------------------------------*/
+.columnaCentrado {
+  text-align: center !important;
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+
+  100% {
+    color: red;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    color: white;
+  }
+
+  100% {
+    color: red;
+  }
+}
+.blink {
+  -webkit-animation: blink 1s linear infinite;
+  -moz-animation: blink 1s linear infinite;
+  animation: blink 1s linear infinite;
+}
+
+#navcontainer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+}
+
+#navcontainer ul li {
+  display: inline;
+}
+
+#navcontainer ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  background-color: #036;
+  text-align: center;
+  display: inline-block;
+  width: 80px;
+}
+
+#navcontainer ul li a:hover {
+  color: #fff;
+  background-color: #369;
+}
+
+#navcontainerright ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: right;
+}
+
+#navcontainerright ul li {
+  display: inline;
+}
+
+#navcontainerright ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  background-color: #036;
+}
+
+#navcontainerright ul li a:hover {
+  color: #fff;
+  background-color: #369;
 }

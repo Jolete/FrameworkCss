@@ -57,7 +57,8 @@
  * Definimos y configuramos las variables CSS que vamos a utilizar
  *
  */
-/*------------------------------------*\
+/*------------------------------------
+*\
     $BREAKPOINTS
 \*------------------------------------*/
 /**
@@ -71,7 +72,7 @@
  * esta es la clase que se añadirá a todos los elementos.
  */
 /*------------------------------------*\
-    $IMAGE-DIR
+    $DIRECTORIES
 \*------------------------------------*/
 /**
  * Con agregar esta variable a las imágenes declaradas en CSS apañamos:
@@ -123,54 +124,55 @@
 /*------------------------------------*\
     $MIXINS
 \*------------------------------------*/
+/*------------------------------------*\
+    $TRANSFORMS MIXINS
+\*------------------------------------*/
+/*
+// Transformations
+*/
+/*------------------------------------*\
+    $VENDOR-PREFIXES
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
 /**
 * Centrar y dar un ancho máximo igual a $pagemaxwidth.
 */
+/*------------------------------------*\
+    $FONTS MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BORDER 
+\*------------------------------------*/
+/*
+/  Gestionamos todos los mixins referente a los bordes, 
+/  el tamaño, radio, color, etc.
+*/
+/*------------------------------------*\
+//    Colores 
+\*------------------------------------*/
+/*------------------------------------*\
+//    Radios
+\*------------------------------------*/
+/*------------------------------------------*\
+    $FUNCTIONS 
+\*------------------------------------------*/
+/*
+/ 	All the functions files imported here
+*/
+/*------------------------------------------*\
+    $FUNCTIONS OF COLORS, TINTS AND SHADES
+\*------------------------------------------*/
+/* 
+ * Funcions de colors i ombres
+ */
+/*------------------------------------*\
+    $FUNCTIONS OF CONVERSIONS
+\*------------------------------------*/
 /* 
  * Función para controlar el index 
  */
-/*------------------------------------*\
-    $PLACEHOLDERS
-\*------------------------------------*/
-/**
-* The ghost, nudged to maintain perfect centering
-*/
-/**
-* Escondemos el texto solo VISUALMENTE
-*/
-/**
-* Escondemos el texto de VISUALMENTE y SCREENREADERS
-*/
-/**
-* Escondemos pero mantenemos layout.
-*/
-/**
-* Visualmente escondido, pero se puede detectar con teclado (focus).
-*/
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  position: static;
-  clip: auto;
-  height: auto;
-  width: auto;
-  margin: 0;
-  overflow: visible;
-}
-
-/**
-* Clear floats.
-* http://bit.ly/1e3YaBH
-*/
-[role="banner"]:after, section:after, .swatch:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/**
-* Gradientes los ocnvertimos en placeholders porque imprime 10 millones de
-* líneas inútiles en el CSS
-*/
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
@@ -206,8 +208,8 @@ article, aside, figure, footer, header, hgroup, nav, section {
  */
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot");
-  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -259,424 +261,6 @@ you can use the generic selector below, but it's slower:
 
 .icon-eye:before {
   content: "\e002";
-}
-
-/*------------------------------------*\
-    $LINKS
-\*------------------------------------*/
-a {
-  text-decoration: none;
-  color: #2194d6;
-}
-a:visited {
-  color: #2194d6;
-}
-a:hover {
-  text-decoration: underline;
-  color: #1a75aa;
-}
-a:focus {
-  outline: thin dotted;
-  color: #1a75aa;
-}
-a:hover, a:active {
-  outline: 0;
-}
-
-/*------------------------------------*\
-    $TABLAS
-\*------------------------------------*/
-table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1.5em;
-  border-collapse: collapse;
-  border-spacing: 0;
-  background-color: transparent;
-}
-table th,
-table td {
-  padding: 8px;
-  vertical-align: top;
-  border-top: 1px solid #cce7f7;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.5em;
-  text-align: left;
-}
-table th {
-  font-weight: bold;
-}
-table thead th {
-  vertical-align: bottom;
-}
-table colgroup + thead tr:first-child th,
-table colgroup + thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-  border-top: 0;
-}
-table tbody + tbody {
-  border-top: 2px solid #cce7f7;
-}
-table tbody tr td,
-table tbody tr th {
-  -webkit-transition: background-color 0.25s 0 linear;
-  -moz-transition: background-color 0.25s 0 linear;
-  -ms-transition: background-color 0.25s 0 linear;
-  -o-transition: background-color 0.25s 0 linear;
-  transition: background-color 0.25s 0 linear;
-}
-table tbody tr:hover td,
-table tbody tr:hover th {
-  background-color: #f8fcfe;
-}
-
-.table-condensed th,
-.table-condensed td {
-  padding: 4px 5px;
-}
-
-.table-bordered {
-  border: 1px solid #cce7f7;
-  border-left: 0;
-  border-collapse: separate;
-  *border-collapse: collapsed;
-}
-.table-bordered th,
-.table-bordered td {
-  border-left: 1px solid #cce7f7;
-}
-.table-bordered thead:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child td {
-  border-top: 0;
-}
-
-.table-striped tbody tr:nth-child(odd) td,
-.table-striped tbody tr:nth-child(odd) th {
-  background-color: white;
-}
-
-/*------------------------------------*\
-    $BOTONES
-\*------------------------------------*/
-/*
- * Definimos los botones y sus variantes
- */
-/**
-* .btn es la clase principal para definir un botón
-*/
-.btn {
-  display: inline-block;
-  line-height: 2.25em;
-  color: #262626;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 100%;
-  white-space: nowrap;
-  background-color: #31a0df;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 1em;
-  padding-left: 1em;
-  border-radius: 2px;
-  	/**
-   	* Nadie quiere un botón con texto subrayado cuando
-   	* hacemos hover.
-   	*/
-}
-.btn:hover {
-  text-decoration: none;
-}
-.btn:active, .btn:focus {
-  outline: none;
-}
-.btn:visited {
-  color: #262626;
-}
-
-/*------------------------------------*\
-    $BOTONES-VARIANTES
-\*------------------------------------*/
-/**
- * Variantes de los botones: color para dar sensaciones.
- *
- */
-/**
-* Inputs con estilo de botones
-*/
-input[type="submit"].btn:hover {
-  border-color: #1e85c0;
-}
-
-/**
-* Botón no disponible
-*/
-.btn--disabled {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-  cursor: default;
-}
-
-/**
-* Botón de Error
-*/
-.btn--error {
-  background-color: #da4f49;
-  color: #48110f;
-}
-.btn--error:hover {
-  color: #fcf3f3;
-}
-.btn--error:visited {
-  color: #48110f;
-}
-
-/**
-* Botón de Info
-*/
-.btn--info {
-  background-color: #a5dddf;
-  color: #308588;
-}
-.btn--info:hover {
-  color: white;
-}
-.btn--info:visited {
-  color: #308588;
-}
-
-/**
-* Botón principal
-*/
-.btn--primary {
-  background-color: #2194d6;
-  color: white;
-}
-.btn--primary:hover {
-  color: #cce7f7;
-}
-.btn--primary:visited {
-  color: #061a25;
-}
-
-/**
-* Botón de OK
-*/
-.btn--success {
-  background-color: #5bb75b;
-  color: #153115;
-}
-.btn--success:hover {
-  color: #e9f5e9;
-}
-.btn--success:visited {
-  color: #153115;
-}
-
-/**
-* Botón de advertencia
-*/
-.btn--warning {
-  background-color: #da4f49;
-  color: #48110f;
-}
-.btn--warning:hover {
-  color: #fcf3f3;
-}
-.btn--warning:visited {
-  color: #48110f;
-}
-
-.btn--inactive,
-.btn--inactive:hover,
-.btn--inactive:active,
-.btn--inactive:focus {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-  cursor: default;
-}
-
-/*------------------------------------*\
-    $BOTONES-TAMAÑOS
-\*------------------------------------*/
-/**
- * Variantes de los botones por tamaño.
- *
- */
-.btn--mini {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  line-height: 1.5;
-}
-
-.btn--small {
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-  line-height: 2;
-}
-
-.btn--large {
-  padding-right: 3em;
-  padding-left: 3em;
-  line-height: 3;
-}
-
-/*------------------------------------*\
-    $BOTONES-GRUPOS
-\*------------------------------------*/
-/**
- * Con esta clase podemos agrupar los botones
- * en grupos horizontales.
- *
- */
-.btn--group {
-  position: relative;
-  *margin-left: .3em;
-}
-
-.btn--group .btn {
-  position: relative;
-  border-radius: 0;
-  float: left;
-  margin-left: -1px;
-}
-
-.btn--group .btn:first-child {
-  margin-left: 0;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn:last-child {
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn.large:first-child {
-  margin-left: 0;
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-.btn--group .btn.large:last-child {
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS
-\*------------------------------------*/
-hr {
-  clear: both;
-  display: block;
-  margin: 3em 0;
-  padding: 0;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #243a50;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS-IMÁGENES
-\*------------------------------------*/
-img {
-  max-width: 100%;
-  border-width: 0;
-  vertical-align: middle;
-  -ms-interpolation-mode: bicubic;
-}
-
-.img--rounded {
-  border-radius: 8px;
-}
-
-.img--polaroid {
-  padding: 12px;
-  background-color: white;
-  border: 1px solid #243a50;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.img--circle {
-  border-radius: 100%;
-}
-
-/*------------------------------------*\
-    $ELEMENTOS-FIGURE
-\*------------------------------------*/
-figure {
-  margin-bottom: 1.5em;
-}
-figure img {
-  margin-bottom: 0.375em;
-}
-figure figcaption {
-  display: block;
-  font-weight: normal;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-style: italic;
-  color: gray;
 }
 
 /*------------------------------------*\
@@ -891,6 +475,489 @@ sub {
 }
 
 /*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+/**
+* The ghost, nudged to maintain perfect centering
+*/
+/**
+* Escondemos el texto solo VISUALMENTE
+*/
+/**
+* Escondemos el texto de VISUALMENTE y SCREENREADERS
+*/
+/**
+* Escondemos pero mantenemos layout.
+*/
+/**
+* Visualmente escondido, pero se puede detectar con teclado (focus).
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  position: static;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+}
+
+/**
+* Clear floats.
+* http://bit.ly/1e3YaBH
+*/
+[role="banner"]:after, section:after, .swatch:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+* Gradientes los ocnvertimos en placeholders porque imprime 10 millones de
+* líneas inútiles en el CSS
+*/
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+a {
+  text-decoration: none;
+  color: #e9f8d6;
+}
+a:visited {
+  color: #e9f8d6;
+}
+a:hover {
+  text-decoration: underline;
+  color: #d2f1aa;
+}
+a:focus {
+  outline: thin dotted;
+  color: #d2f1aa;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
+/*------------------------------------*\
+    $TABLAS
+\*------------------------------------*/
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+table th,
+table td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid white;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  text-align: left;
+}
+table th {
+  font-weight: bold;
+}
+table thead th {
+  vertical-align: bottom;
+}
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+table tbody + tbody {
+  border-top: 2px solid white;
+}
+table tbody tr td,
+table tbody tr th {
+  -webkit-transition: background-color 0.25s 0 linear;
+  -moz-transition: background-color 0.25s 0 linear;
+  -o-transition: background-color 0.25s 0 linear;
+  transition: background-color 0.25s 0 linear;
+}
+table tbody tr:hover td,
+table tbody tr:hover th {
+  background-color: white;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+
+.table-bordered {
+  border: 1px solid white;
+  border-left: 0;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+}
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid white;
+}
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: white;
+}
+
+/*------------------------------------*\
+    $BOTONES
+\*------------------------------------*/
+/*
+ * Definimos los botones y sus variantes
+ */
+/**
+* .btn es la clase principal para definir un botón
+*/
+.btn {
+  display: inline-block;
+  line-height: 2.25em;
+  color: #262626;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 100%;
+  white-space: nowrap;
+  background-color: #f5fcec;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  	/**
+   	* Nadie quiere un botón con texto subrayado cuando
+   	* hacemos hover.
+   	*/
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn:active, .btn:focus {
+  outline: none;
+}
+.btn:visited {
+  color: #262626;
+}
+
+/*------------------------------------*\
+    $BOTONES-VARIANTES
+\*------------------------------------*/
+/**
+ * Variantes de los botones: color para dar sensaciones.
+ *
+ */
+/**
+* Inputs con estilo de botones
+*/
+input[type="submit"].btn:hover {
+  border-color: #ddf4c0;
+}
+
+/*------------------------------------*\
+    $BOTONES-ESTADOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por estado.
+ *
+ */
+/**
+* Botón no disponible
+*/
+.btn--disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
+
+/**
+* Botón de Error
+*/
+.btn--error {
+  background-color: #da4f49;
+  color: #48110f;
+}
+.btn--error:hover {
+  color: #fcf3f3;
+}
+.btn--error:visited {
+  color: #48110f;
+}
+
+/**
+* Botón de Info
+*/
+.btn--info {
+  background-color: #a5dddf;
+  color: #308588;
+}
+.btn--info:hover {
+  color: white;
+}
+.btn--info:visited {
+  color: #308588;
+}
+
+/**
+* Botón principal
+*/
+.btn--primary {
+  background-color: #e9f8d6;
+  color: white;
+}
+.btn--primary:hover {
+  color: white;
+}
+.btn--primary:visited {
+  color: #8cda28;
+}
+
+/**
+* Botón de OK
+*/
+.btn--success {
+  background-color: #5bb75b;
+  color: #153115;
+}
+.btn--success:hover {
+  color: #e9f5e9;
+}
+.btn--success:visited {
+  color: #153115;
+}
+
+/**
+* Botón de advertencia
+*/
+.btn--warning {
+  background-color: #da4f49;
+  color: #48110f;
+}
+.btn--warning:hover {
+  color: #fcf3f3;
+}
+.btn--warning:visited {
+  color: #48110f;
+}
+
+.btn--inactive,
+.btn--inactive:hover,
+.btn--inactive:active,
+.btn--inactive:focus {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
+
+/*------------------------------------*\
+    $BOTONES-TAMAÑOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por tamaño.
+ *
+ */
+.btn--mini {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 1.5;
+}
+
+.btn--small {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 2;
+}
+
+.btn--large {
+  padding-right: 3em;
+  padding-left: 3em;
+  line-height: 3;
+}
+
+/*------------------------------------*\
+    $BOTONES-ESTADOS
+\*------------------------------------*/
+/**
+ * Variantes de los botones por forma.
+ *
+ */
+.btn--circular {
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: inset 0 10px 15px rgba(255, 255, 255, 0.35), inset 0 -10px 15px rgba(0, 0, 0, 0.05), inset 10px 0 15px rgba(0, 0, 0, 0.05), inset -10px 0 15px rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: 6em;
+  width: 6em;
+  background-color: cyan;
+}
+
+/*------------------------------------*\
+    $BOTONES-GRUPOS
+\*------------------------------------*/
+/**
+ * Con esta clase podemos agrupar los botones
+ * en grupos horizontales.
+ *
+ */
+.btn--group {
+  position: relative;
+  *margin-left: .3em;
+}
+
+.btn--group .btn {
+  position: relative;
+  border-radius: 0;
+  float: left;
+  margin-left: -1px;
+}
+
+.btn--group .btn:first-child {
+  margin-left: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn:last-child {
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn.large:first-child {
+  margin-left: 0;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.btn--group .btn.large:last-child {
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS
+\*------------------------------------*/
+hr {
+  clear: both;
+  display: block;
+  margin: 3em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #243a50;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS-IMÁGENES
+\*------------------------------------*/
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+.img--rounded {
+  border-radius: 8px;
+}
+
+.img--polaroid {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #243a50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.img--circle {
+  border-radius: 100%;
+}
+
+/*------------------------------------*\
+    $ELEMENTOS-FIGURE
+\*------------------------------------*/
+figure {
+  margin-bottom: 1.5em;
+}
+figure img {
+  margin-bottom: 0.375em;
+}
+figure figcaption {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: gray;
+}
+
+/*------------------------------------*\
     $NAVEGACIÓN
 \*------------------------------------*/
 /**
@@ -1061,6 +1128,177 @@ a:hover, a:visited:hover {
 }
 
 /*------------------------------------*\
+    $ALERTAS
+\*------------------------------------*/
+.alert {
+  margin-bottom: 1.5em;
+  padding: 8px 35px 8px 14px;
+  background-color: #fce4cf;
+  border: 1px solid #f6ae6f;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #904809;
+  border-radius: 2px;
+}
+.alert .alert--heading {
+  color: inherit;
+}
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  float: right;
+  font-size: 21px;
+  font-size: 1.3125rem;
+  font-weight: bold;
+  line-height: 18px;
+  color: inherit;
+}
+
+.alert--success {
+  background-color: #c5e6c5;
+  border-color: #a2d6a2;
+  color: #347834;
+}
+
+.alert--warning {
+  background-color: #f4cac8;
+  border-color: #eba19e;
+  color: #9d2520;
+}
+
+.alert--error {
+  background-color: #f4cac8;
+  border-color: #eba19e;
+  color: #da4f49;
+}
+
+.alert--info {
+  background-color: #cbebec;
+  border-color: #7fcfd2;
+  color: #236062;
+}
+
+.alert--inverse {
+  background-color: #c63d16;
+  border-color: black;
+  color: white;
+}
+
+.alert--block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert--block .alert--heading {
+  margin-bottom: 0.1875em;
+  font-size: inherit;
+  font-weight: bold;
+}
+.alert--block > p,
+.alert--block > ul {
+  margin-bottom: 0;
+}
+.alert--block p + p {
+  margin-top: 5px;
+}
+
+.badge {
+  padding: 1px 9px 2px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: 2px;
+  color: #262626;
+  background-color: #e9f8d6;
+  -webkit-transition: background-color 0.25s 0 linear;
+  -moz-transition: background-color 0.25s 0 linear;
+  -o-transition: background-color 0.25s 0 linear;
+  transition: background-color 0.25s 0 linear;
+}
+.badge:hover {
+  color: #262626;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.badge--error {
+  background-color: #da4f49;
+}
+.badge--error:hover {
+  background-color: #9d2520;
+}
+
+.badge--warning {
+  background-color: #da4f49;
+}
+.badge--warning:hover {
+  background-color: #9d2520;
+}
+
+.badge--success {
+  background-color: #a5dddf;
+}
+.badge--success:hover {
+  background-color: #5ac1c4;
+}
+
+.badge--info {
+  background-color: #a5dddf;
+  color: #236062;
+}
+.badge--info:hover {
+  background-color: #5ac1c4;
+}
+
+.badge--inverse {
+  background-color: #a5dddf;
+  color: white;
+}
+.badge--inverse:hover {
+  background-color: #5ac1c4;
+  color: white;
+}
+
+.well {
+  min-height: 21px;
+  padding: 11px;
+  border-radius: 2px;
+  margin-bottom: 1.5em;
+  background-color: white;
+  border: 1px solid #d0f0a8;
+  -webkit-box-shadow: inset 0 1px 10px #e8f8d3;
+  box-shadow: inset 0 1px 10px #e8f8d3;
+}
+.well p:last-child {
+  margin-bottom: 0;
+}
+
+.well--large {
+  padding: 22px;
+}
+
+.well--small {
+  padding: 6px;
+}
+
+::-moz-selection {
+  background-color: white;
+  color: #e9f8d6;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: white;
+  color: #e9f8d6;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
+/*------------------------------------*\
     $FORMULARIOS
 \*------------------------------------*/
 form {
@@ -1114,7 +1352,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -1160,7 +1398,6 @@ select:hover {
 }
 
 input[type="image"],
-input[type="checkbox"],
 input[type="radio"] {
   width: auto;
   height: auto;
@@ -1172,7 +1409,6 @@ input[type="radio"] {
   border: 0 \9;
 }
 
-input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1239,28 +1475,20 @@ input[type="hidden"] {
   display: none;
 }
 
-.radio,
-.checkbox {
+.radio {
   padding-left: 18px;
   font-weight: normal;
 }
 
 .radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  float: left;
-  margin-left: -18px;
-}
-
-.radio.inline,
-.checkbox.inline {
+.radio.inline {
   display: inline-block;
   padding-top: 5px;
   margin-bottom: 0;
   vertical-align: middle;
 }
 
-.radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline {
+.radio.inline + .radio.inline {
   margin-left: 10px;
 }
 
@@ -1270,22 +1498,22 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
   opacity: 0.5;
+  filter: alpha(opacity=50);
   cursor: not-allowed;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #2194d6, 40%;
+  border-color: #e9f8d6, 40%;
   outline: 0;
   outline: thin dotted \9;
+  -webkit-box-shadow: 0px 0px 6px 0px #1a1a1a;
+  box-shadow: 0px 0px 6px 0px #1a1a1a;
 }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
-input[type="checkbox"]:focus,
 select:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1390,6 +1618,17 @@ input:required:focus:valid {
 }
 
 /*------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /*------------------------------------*\
+      $2x
+  \*------------------------------------*/
+  /*
+   * Breakpoint para dispositivos retina
+   */
+}
+/*------------------------------------*\
     $SITIO
 \*------------------------------------*/
 @-webkit-viewport {
@@ -1407,7 +1646,7 @@ input:required:focus:valid {
 @viewport {
   width: device-width;
 }
-html {
+html.sitio {
   background: white;
   font-size: 100%;
   -webkit-overflow-scrolling: touch;
@@ -1416,12 +1655,12 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-body {
+body.sitio {
   margin: 0;
   padding: 0;
   width: 100%;
   background-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5em;
@@ -1432,186 +1671,6 @@ body {
 * A partir de aquí es donde debes escribir los estilos de posicionamiento
 * y detalles que forman tu web. Disfruta!
 */
-/*------------------------------------*\
-    $TEXTURAS
-\*------------------------------------*/
-.alert {
-  margin-bottom: 1.5em;
-  padding: 8px 35px 8px 14px;
-  background-color: #fce4cf;
-  border: 1px solid #f6ae6f;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  color: #904809;
-  border-radius: 2px;
-}
-.alert .alert--heading {
-  color: inherit;
-}
-.alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  float: right;
-  font-size: 21px;
-  font-size: 1.3125rem;
-  font-weight: bold;
-  line-height: 18px;
-  color: inherit;
-}
-
-.alert--success {
-  background-color: #c5e6c5;
-  border-color: #a2d6a2;
-  color: #347834;
-}
-
-.alert--warning {
-  background-color: #f4cac8;
-  border-color: #eba19e;
-  color: #9d2520;
-}
-
-.alert--error {
-  background-color: #f4cac8;
-  border-color: #eba19e;
-  color: #da4f49;
-}
-
-.alert--info {
-  background-color: #cbebec;
-  border-color: #7fcfd2;
-  color: #236062;
-}
-
-.alert--inverse {
-  background-color: #c63d16;
-  border-color: black;
-  color: white;
-}
-
-.alert--block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-.alert--block .alert--heading {
-  margin-bottom: 0.1875em;
-  font-size: inherit;
-  font-weight: bold;
-}
-.alert--block > p,
-.alert--block > ul {
-  margin-bottom: 0;
-}
-.alert--block p + p {
-  margin-top: 5px;
-}
-
-.badge {
-  padding: 1px 9px 2px;
-  font-size: 12px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  white-space: nowrap;
-  border-radius: 2px;
-  color: #262626;
-  background-color: #2194d6;
-  -webkit-transition: background-color 0.25s 0 linear;
-  -moz-transition: background-color 0.25s 0 linear;
-  -ms-transition: background-color 0.25s 0 linear;
-  -o-transition: background-color 0.25s 0 linear;
-  transition: background-color 0.25s 0 linear;
-}
-.badge:hover {
-  color: #262626;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.badge--error {
-  background-color: #da4f49;
-}
-.badge--error:hover {
-  background-color: #9d2520;
-}
-
-.badge--warning {
-  background-color: #da4f49;
-}
-.badge--warning:hover {
-  background-color: #9d2520;
-}
-
-.badge--success {
-  background-color: #a5dddf;
-}
-.badge--success:hover {
-  background-color: #5ac1c4;
-}
-
-.badge--info {
-  background-color: #a5dddf;
-  color: #236062;
-}
-.badge--info:hover {
-  background-color: #5ac1c4;
-}
-
-.badge--inverse {
-  background-color: #a5dddf;
-  color: white;
-}
-.badge--inverse:hover {
-  background-color: #5ac1c4;
-  color: white;
-}
-
-.well {
-  min-height: 21px;
-  padding: 11px;
-  border-radius: 2px;
-  margin-bottom: 1.5em;
-  background-color: white;
-  border: 1px solid #a7d6f1;
-  -webkit-box-shadow: inset 0 1px 10px #d3ebf8;
-  box-shadow: inset 0 1px 10px #d3ebf8;
-}
-.well p:last-child {
-  margin-bottom: 0;
-}
-
-.well--large {
-  padding: 22px;
-}
-
-.well--small {
-  padding: 6px;
-}
-
-::-moz-selection {
-  background-color: white;
-  color: #2194d6;
-  text-shadow: none;
-}
-
-::selection {
-  background-color: white;
-  color: #2194d6;
-  text-shadow: none;
-}
-
-/*------------------------------------*\
-    $BREAKPOINTS
-\*------------------------------------*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /*------------------------------------*\
-      $2x
-  \*------------------------------------*/
-  /*
-   * Breakpoint para dispositivos retina
-   */
-}
 /*------------------------------------*\
     $PATRONES
 \*------------------------------------*/
@@ -1676,7 +1735,7 @@ section .title {
 }
 
 .basefont::after {
-  content: '"Helvetica Neue", Helvetica, Arial, sans-serif';
+  content: '"Helvetica", Helvetica, Arial, sans-serif';
 }
 
 .altfont::after {
@@ -1709,11 +1768,11 @@ section .title {
 }
 
 .swatch-base span:nth-child(1) {
-  background-color: #2194d6;
+  background-color: #e9f8d6;
 }
 .swatch-base small::after {
-  content: "#2194d6";
-  color: #2194d6;
+  content: "#e9f8d6";
+  color: #e9f8d6;
   display: block;
 }
 
@@ -1736,11 +1795,11 @@ section .title {
 }
 
 .swatch-compcolor2 span:nth-child(1) {
-  background-color: rgba(33, 148, 214, 0.3);
+  background-color: rgba(233, 248, 214, 0.3);
 }
 .swatch-compcolor2 small::after {
-  content: " rgba(33, 148, 214, 0.3)";
-  color: rgba(33, 148, 214, 0.3);
+  content: " rgba(233, 248, 214, 0.3)";
+  color: rgba(233, 248, 214, 0.3);
   display: block;
 }
 
@@ -1823,7 +1882,6 @@ section .title {
   background-clip: padding-box;
   -webkit-transition: all 0.8s ease-in-out;
   -moz-transition: all 0.8s ease-in-out;
-  -ms-transition: all 0.8s ease-in-out;
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
@@ -1850,12 +1908,11 @@ section .title {
 .hover {
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 .hover:hover {
-  background-color: #2194d6;
+  background-color: #e9f8d6;
 }
 .hover strong::after {
   content: ": 0.3s";
@@ -1872,5 +1929,3 @@ figure {
   float: left;
   margin-right: 5%;
 }
-
-/*# sourceMappingURL=style.css.map */

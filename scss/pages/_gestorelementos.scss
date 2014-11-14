@@ -1,0 +1,80 @@
+
+
+
+
+
+/*------------------------------------*\
+    $GESTOR ELEMENTOS
+\*------------------------------------*/
+
+
+
+
+.columnaCentrado{text-align:center !important}
+@keyframes blink {  
+	0% { color: white; }
+	100% { color: red; }
+}
+
+@-webkit-keyframes blink {
+	0% { color: white; }
+	100% { color: red; }
+}
+
+.blink {
+	-webkit-animation: blink 1s linear infinite;
+	-moz-animation: blink 1s linear infinite;
+	animation: blink 1s linear infinite;
+} 
+
+#navcontainer ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: left;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a
+{
+	text-decoration: none;
+	padding: .2em 1em;
+	color: #fff;
+	background-color: #036;
+	text-align:center;
+
+	display:inline-block;
+	width:80px;
+}
+
+#navcontainer ul li a:hover
+{
+	color: #fff;
+	background-color: #369;
+}
+
+#navcontainerright ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: right;
+}
+
+#navcontainerright ul li { display: inline;}
+
+#navcontainerright ul li a
+{
+	text-decoration: none;
+	padding: .2em 1em;
+	color: #fff;
+	background-color: #036;
+}
+
+#navcontainerright ul li a:hover
+{
+	color: #fff;
+	background-color: #369;
+}

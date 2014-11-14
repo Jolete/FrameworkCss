@@ -1,0 +1,263 @@
+
+
+
+
+
+/*------------------------------------*\
+    $LOGIN/INICIO
+\*------------------------------------*/
+
+
+html.login, html.login body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    @include prefixer(box-sizing, border-box, webkit moz spec);
+
+    /*background: radial-gradient(ellipse at center center, #7799bb 0%, #3c5977 100%);*/
+    background: #7799bb; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3OTliYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYzU5NzciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+    /* assignem gradient de colors */
+    background: -moz-linear-gradient(left, #7799bb 0%, #3c5977 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7799bb), color-stop(100%,#3c5977)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #7799bb 0%,#3c5977 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #7799bb 0%,#3c5977 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #7799bb 0%,#3c5977 100%); /* IE10+ */
+    background: linear-gradient(to right, #7799bb 0%,#3c5977 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7799bb', endColorstr='#3c5977',GradientType=1 ); /* IE6-8 */
+
+    font-size: 200%;
+//    @include font-size($basefontsizelarge);
+    height: 100%;
+
+    body {
+        font: .1rem 'Open Sans', sans-serif;
+        @include font-size(2);
+        background: url("../../../../commons/frameworkcss/imgs/bg/mapa.png") center center no-repeat;
+    }
+
+    .logo {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: auto;
+        border: none!important;
+        @include border-image (null,null,null,null); 
+    }
+    
+    .center {
+        margin: auto;
+        width: 100%;
+        //background-color: #b0e0e6;
+        background-color: transparent;
+        height: auto;
+        text-align: center;
+    }
+
+    footer {
+        position: relative;
+        text-align:center;
+        font-family: Arial, Helvetica, Sans-Serif;
+        font-size: 0.47rem;
+        //width: 100%;
+        background-color: transparent;
+        position: absolute;
+        vertical-align: center;
+        bottom: 2px;
+        right: 0;
+
+        // aquí si no llega a $bp4 = 900px
+        @include media-query-bp($bp4,min,width,all) {
+            bottom: 3%;
+        }
+
+        // aquí si sobrepasa $bp5 = 1100px
+        @include media-query-bp($bp5,min,width,all) {
+            bottom: 1%;
+        }
+
+        a
+        {
+            color: white;
+            text-decoration: none;
+            background-image: none;
+            background-color: transparent;
+        }
+
+        a:hover
+        {
+            color: #404040;
+            text-decoration: underline;
+        }
+        a:active
+        {
+            color: #404040;
+            text-decoration: none;
+        }
+    }
+
+    a
+    {
+        margin-top: 5%;
+        color: white;
+        text-decoration: none;
+        background-image: none;
+        background-color: transparent;
+    }
+
+    a:hover
+    {
+        color: #404040;
+        text-decoration: underline;
+    }
+    a:active
+    {
+        color: #404040;
+        text-decoration: none;
+    }
+
+}
+
+.register {
+    @include font-size(10);
+    position: relative;
+    margin: auto;
+    margin-top: 3%;
+    width: 55%;
+    padding: 3%;
+    min-height: 360px;
+    max-height: 950px;
+    height: auto;
+    text-align: center;
+
+    // color background
+    @include background(rgba(33, 66, 99, 0.8));
+    
+    @include box-shadow(0 40px 115px rgba(0,0,0,0.95));
+    //box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.75);
+
+    @include border-radius-spec(20px, 0px, 20px, 0px);
+    color: white;
+
+    // aquí si no llega a $bp4 = 900px
+    @include media-query-bp($bp4,min,width,all) {
+        width: 45%;
+        margin-top: 1%;
+    }
+
+    // aquí si sobrepasa $bp5 = 1100px
+    @include media-query-bp($bp5,min,width,all) {
+        width: 40%;
+    }
+}
+
+
+.register.large {
+    max-height: 700px;
+}
+
+.register h1 {
+    position: relative;
+    top: -75px;
+    left: 25%;
+    width: auto;
+    margin: 0;
+    text-align: center;
+    color: red;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.register h1 span {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    font: 30px fontawesome;
+}
+
+.register input {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid $bordercolor;
+    background-color: rgba(0, 0, 0, 0.1);
+
+
+    @include scale (1);
+
+    @include transition (1s);
+    
+    @include appearance(none);
+}
+
+.register [placeholder]::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.register [placeholder]:focus::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.register input:-webkit-autofill, .register input:-webkit-autofill:focus {
+    
+     $color : rgba(255,255,255,1);
+     $color : #2d4965;
+
+    -webkit-box-shadow:0 0 0 50px $color inset;
+    -webkit-text-fill-color: white;
+}
+
+.register input:focus {
+    @include scale (1.2);
+    border: solid 1px white;
+}
+
+.register select{
+    background: rgba(0, 0, 0, 0.4);
+    width:100%;
+    height: 40px;
+    color:white;
+    margin:1% 0 10%;
+
+    @include appearance(none);
+}
+
+.register .btn { 
+    display: inline-block; 
+    padding: 6px 12px; 
+    margin-bottom: 20px; 
+    @include font-size($basefontsizesmall);
+    // font-weight: normal; 
+    // line-height: 2.42857; 
+    text-align: center; 
+    white-space: nowrap; 
+    vertical-align: middle; 
+    cursor: pointer; 
+
+    @include user-select(none);
+    
+    background-image: none; 
+
+    @include border-radius (40px);
+
+}
+
+ // .register .btn-default { color: #ffffff; background-color: #29A3CC; border-color: #33CCFF; width: 100%; float: left; }
+ // .register .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { color: #ffffff; background-color: #33CCFF; border-color: #33CCFF; }
+// .register .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { background-image: none; }
+// .register .btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active { background-color: #29A3CC; border-color: #33CCFF; }
+// .register .btn-default .badge { color: #29A3CC; background-color: #fff; }
+
+
+.register .element {
+    @include font-size($basefontsizesmall);
+    color : rgba(224,207,125,1);
+}
+
+#diagnostico {
+    visibility: hidden;
+}

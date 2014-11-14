@@ -1,17 +1,20 @@
-<h1 id="jarenas-sass-framework">jarenas SASS framework</h1>
-<h3 id="configuraci-n-">Configuración:</h3>
+<p><header style="background-color: rgba(33,148,214,.5)">
+<img src="imgs/logos/logo-default.png"></img>
+</header></p>
+<h1 id="tecnogeo-sass-framework">Tecnogeo SASS framework</h1>
+<h3 id="configuraci-oacute-n-">Configuraci&oacute;n:</h3>
 <h4 id="style-scss">style.scss</h4>
 <p>Configura primeramente el archivo <code>scss/style.scss</code> con los archivos que quieres incluir.
 Si no quieres incluir el archivo _fuentes.scss porque no los vas a usar o cualquiero otro
-archivo por cualqueir otra razón, comenta esa línea para que no compile CSS de más y
+archivo por cualquier otra raz&oacute;n, comenta esa l&iacute;nea para que no compile CSS de m&aacute;s y
 optimizar en peso.</p>
 <h4 id="variables-scss">variables.scss</h4>
-<p>Pasa a configurar las variables y diferentes opciones de la atmósfera de diseño,
-nos vamos a <code>variables.scss</code> donde podremos configurar colores, fuentes, tamaños, 
+<p>Pasa a configurar las variables y diferentes opciones de la atm&oacute;sfera de dise&ntilde;o,
+nos vamos a <code>variables.scss</code> donde podremos configurar colores, fuentes, tama&ntilde;os, 
 etc...</p>
 <h3 id="breakpoints">Breakpoints</h3>
-<p>Los breakpoints los he colocado en EM en vez de pixels para que el diseño no se 
-vea afectado por acciones como el ZOOM. Para más info leer a 
+<p>Los breakpoints los he colocado en EM en vez de pixels para que el dise&ntilde;o no se 
+vea afectado por acciones como el ZOOM. Para m&aacute;s info leer a 
 <a href="http://css-tricks.com/why-ems/">Chris Coyer</a> y a <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">Lyza Gardner</a> con argumentos al respecto.</p>
 <pre><code class="lang-scss">$bp1 : 30em;      // 480px
 $bp2 : 37.5em;    // 600px
@@ -20,84 +23,286 @@ $bp4 : 56.25em;   // 900px
 $bp5 : 68.75em;   // 1100px
 </code></pre>
 <h3 id="nomenclatura">Nomenclatura</h3>
-<p>La convención de nombre sigue este patrón:</p>
+<p>La convenci&oacute;n de nombre sigue este patr&oacute;n:</p>
+<ul>
+<li><strong>Componentes</strong>: un módulo de página que tiene un cierto propósito y es un wrapper para sus hijos, por ejemplo, un modal o un slider pueden ser componentes.</li>
+<li><strong>Nested Elements/hijos</strong>: Partes de un componente, a veces similares entre componentes.</li>
+<li><strong>Variantes/modificadores</strong>: Un componente que contiene elementos que lo modifican de una cierta forma.</li>
+<li><strong>Estados</strong>: El estado de un componente o de un hijo es modificado por la interacción del usuario, por ejemplo un boton desabilitado.</li>
+</ul>
+<h5 id="componentes">COMPONENTES</h5>
 <pre><code class="lang-css">    .bloque{}
-    .bloque__elemento{}
-    .bloque--modificador{}
+    .bloque-nombre{}
+    .bloque-partenombre-partenombre{}
 </code></pre>
 <ul>
-<li>&#39;.bloque&#39; representa el primer nivel de una abstracción o componente.</li>
-<li>&#39;.bloque__elemento&#39; representa un descendente de &#39;.bloque&#39; que se ayuda de 
-&#39;.bloque&#39; como un conjunto.</li>
-<li>&#39;.bloque--modificador&#39; representa un estado diferente de &#39;.bloque&#39;.</li>
+<li><strong>&#39;.bloque&#39;</strong> representa el primer nivel de una abstracci&oacute;n o componente.</li>
+<li><strong>&#39;.bloque-nombre&#39;</strong> representa el primer nivel de una abstracci&oacute;n o componente. </li>
+<li><strong>&#39;.bloque-partenombre-partenombre&#39;</strong> representa el primer nivel de una abstracci&oacute;n o componente. Varios guiones pueden formar un nombre largo.</li>
 </ul>
-<p>Una <strong>analogía</strong> del funcionamiento de las clases BEM sería:</p>
+<h5 id="variantes-modificadores">VARIANTES/MODIFICADORES</h5>
+<pre><code class="lang-css">    .bloque{}
+    .bloque--modificador1{}
+    .bloque--modificador2{}
+</code></pre>
+<p>Por ejemplo: </p>
 <pre><code class="lang-css">    .persona{}
     .persona--mujer{}
-        .persona__mano{}
-        .persona__mano--izquierda{}
-        .persona__mano--derecha{}
+    .persona--hombre{}
 </code></pre>
-<p>Para más info podéis leer mi traducción de la <a href="https://github.com/jolete/CSS-Guidelines">guía de CSS</a> de <a href="https://twitter.com/csswizardry">Harry Roberts</a> 
-a la cual me he ajustado en su mayoría para crear este framework.</p>
-<p>También tenemos espacio entre secciones para que sea fácil de ubicar al ver el 
+<ul>
+<li><strong>&#39;.persona&#39;</strong> representa el primer nivel de una abstracci&oacute;n o componente.</li>
+<li><strong>&#39;.persona--mujer&#39;</strong> representa una variante/modificaci&oacute;n de un elemento de primer nivel de una abstracci&oacute;n o componente. </li>
+<li><strong>&#39;.persona--hombre&#39;</strong> representa otra variante/modificaci&oacute;n de un elemento de primer nivel de una abstracci&oacute;n o componente. </li>
+</ul>
+<h5 id="modificadores-y-indicadores-de-estado">MODIFICADORES Y INDICADORES DE ESTADO</h5>
+<p>Esto es una variante realmente. </p>
+<pre><code class="lang-css">    .bloque.estado{}
+    .bloque-nombre.estado-nombre{}
+    .bloque.js-estado{}  / ** Para comportamiento aplicado via JS ** /
+</code></pre>
+<p>Por ejemplo:</p>
+<pre><code class="lang-css">    .bloque.is-active{}
+    .bloque-name.has-children{}
+    .bloque.js-selected{}
+</code></pre>
+<h5 id="hijos-elementos-anidados-">HIJOS (ELEMENTOS ANIDADOS)</h5>
+<pre><code class="lang-css">    .bloque{}
+    .bloque__elemento{}
+</code></pre>
+<p>Por ejemplo: </p>
+<pre><code class="lang-css">    .component__link{}
+    .component-name__link-element{}
+</code></pre>
+<ul>
+<li><strong>&#39;.bloque__elemento&#39;</strong> representa un descendente de &#39;.bloque&#39; que se ayuda de 
+&#39;.bloque&#39; como un conjunto.</li>
+<li><strong>&#39;.bloque--modificador&#39;</strong> representa un estado diferente de &#39;.bloque&#39;.</li>
+</ul>
+<p>Una <strong>analog&iacute;a</strong> del funcionamiento de las clases BEM ser&iacute;a:</p>
+<pre><code class="lang-css">    .persona{}
+    .persona--mujer{}
+        .persona--mujer__mano{}
+        .persona--mujer__mano--izquierda{}
+        .persona--mujer__mano--derecha{}
+
+    .persona--hombre{}
+        .persona--hombre__mano{}
+        .persona--hombre__mano--izquierda{}
+        .persona--hombre__mano--derecha{}
+
+    .wrapper{}
+        .container{}
+            .header{}
+                .header__img{}
+                .header__img--general{}
+                .header__img--nav{}
+            .content{}
+            ...
+</code></pre>
+<p>Otra opci&oacute;n de implementaci&oacute;n:</p>
+<pre><code class="lang-css">    .persona{}
+    .persona--mujer{}
+    .persona--mujer .persona__mano{}
+    .persona--mujer .persona__mano .persona__mano--izquierda{}
+</code></pre>
+<p>Por ejemplo, un pie de p&aacute;gina podria ser como este:</p>
+<pre><code class="lang-css">    .Pie {
+        font-size: 7pt;
+        width: 100%;
+        color: #404040;
+        font-family: Arial, Helvetica, Sans-Serif;
+        height: 22px;
+        text-align: center;
+    }
+
+    .Pie A {
+        color: #404040;
+        text-decoration: none;
+    }
+
+    .Pie A:hover {
+        color: #404040;
+        text-decoration: underline;
+    }
+
+    .Pie A:active {
+        color: #404040;
+        text-decoration: none;
+    }
+</code></pre>
+<p>o tambi&eacute;n:</p>
+<pre><code class="lang-css">    .Pie {
+        font-size: 7pt;
+        width: 100%;
+        color: #404040;
+        font-family: Arial, Helvetica, Sans-Serif;
+        height: 22px;
+        text-align: center;
+
+        &amp;; A {
+            text-decoration: none;
+        }
+
+        &amp;; A:hover {
+            text-decoration: underline;
+        }
+
+        &amp;; A:active {
+            text-decoration: none;
+        }
+    }
+</code></pre>
+<p>Para m&aacute;s info pod&eacute;is leer esta traducci&oacute;n de la <a href="https://github.com/Wakkos/CSS-Guidelines">gu&iacute;a de CSS</a> de <a href="https://twitter.com/csswizardry">Harry Roberts</a> 
+a la cual me he ajustado en su mayor&iacute;a para crear este framework.</p>
+<p>Tambi&eacute;n tenemos espacio entre secciones para que sea f&aacute;cil de ubicar al ver el 
 archivo compilado <code>style.css</code>.</p>
-<h3 id="organizaci-n">Organización</h3>
-<p>Los archivos de <strong>SCSS</strong> están todos dentro de la carpeta <code>scss</code> y distribuidos 
+<h3 id="organizaci-oacute-n">Organizaci&oacute;n</h3>
+<p>La <strong>estructura principal</strong> de directorios del framework es la siguiente:</p>
+<pre><code>-&gt;FrameworkCss
+    -&gt;css       (directorio con css principal a llamar en la p&amp;aacute;gina web)
+    -&gt;data      (directorio con datos de la web)
+    -&gt;docs      (directorio con todo tipo de documentaci&amp;oacute;n)
+    -&gt;fonts     (directorio de fuentes de todo el framework)
+    -&gt;imgs      (directorio con todas las im&amp;aacute;genes del framework)
+    -&gt;js        (directorio con todos los scripts del framework)
+    -&gt;patrones  (directorio donde se genera la guia de estilos)
+    -&gt;scss      (directorio sass donde estar todo el material y estilos para compilar)
+    -&gt;vendor    (directorio con frameworks de 3rd party)
+</code></pre><pre><code>
+
+</code></pre><p>Seguidamente se muestra toda la estructura interna de los directorios principales. Los archivos de <strong>SCSS</strong> est&aacute;n todos dentro de la carpeta <code>scss</code> y distribuidos 
 de la siguiente manera:</p>
-<pre><code>--scss
-        _contenido.scss
-        debug.scss
-        lt-ie9.scss
-        style.scss
+<pre><code class="lang-`">
+-&gt;FrameworkCss
+    -&gt;css (directorio con css principal a llamar en la pàgina web)
+        --debug.css
+        --it-ie9.css
+        --style.css
+
+    -&gt;data (directorio con datos de la web)
+
+    -&gt;docs (directorio con todo tipo de documentaci&amp;oacute;n)
+        --docsdoc
+        --docspdf
+        --docsppt
+        --docstxt
+        --docsxls
+
+        readme.html  (se genera autom&amp;aacute;ticament con prepros)
+        readme.md    (fichero a editar para describir este directorio y su contenido)
+
+    -&gt;fonts (directorio de fuentes de todo el framework)
+        readme.html  (se genera autom&amp;aacute;ticament con prepros)
+        readme.md    (fichero a editar para describir este directorio y su contenido)
+
+    -&gt;imgs (directorio con todas las im&amp;aacute;genes del framework)
+        --bg            (directorio de imagenes de background)
+        --icons         (directorio de iconos)
+        --icons16x16    (directorio de iconos de tama&amp;ntilde;o 16x16)
+        --icons32x32    (directorio de iconos de tama&amp;ntilde;o 32x32)
+        --logos         (directorio de logos)
+
+
+    -&gt;js (directorio con todos los scripts del framework)
+        --min           (directorio con los js minificados)
+
+    -&gt;patrones (directorio donde se genera la guia de estilos)
+        atoms.html  (se genera autom&amp;aacute;ticament con prepros)
+        atoms.md    (fichero a editar los tipos de atomos principales de la guia)
+        index.html  (**p&amp;aacute;gina web de la guia principal!!**)
+
+        --css           (directorio principal donde se genera el css principal de la guia)
+        --imgs          (directorio con todas las im&amp;aacute;genes de la guia)
+                --bg            (directorio de imagenes de background)
+                --icons         (directorio de iconos)
+                --icons16x16    (directorio de iconos de tama&amp;ntilde;o 16x16)
+                --icons32x32    (directorio de iconos de tama&amp;ntilde;o 32x32)
+                --logos         (directorio de logos)     
+        --scss          (directorio sass donde estar todo el material y estilos para compilar de la guia)
+                --_patron.scss  (fichero principal para crear elementos propios de la guia)
+                --style.scss    (fichero principal que realiza todos los imports de la guia)
+
+
+    -&gt;scss (directorio sass donde estar todo el material y estilos para compilar)
+        debug.scss   (fichero para ayuda en fallos sint&amp;aacute;cticos)
+        It-ie9.scss  (fichero de imports de scss para cargar ficheros sass compatibles con ie9)
+        style.scss   (fichero de imports principal del framework con todos los sass)
+
         --base
                      _reset.scss
                      _normalize.scss
-                     _elementos.scss
-                     _formularios.scss
                      _fuentes.scss
-                     _links.scss      
                      _tipografia.scss
-
-        --componentes
+                     _variables.scss    ( contiene todas las variables generales del framework )
+       --componentes
                      _botones.scss
+                     _elementos.scss
+                     _flex.scss
+                     _formularios.scss
+                     _links.scss      
                      _navegacion.scss
                      _paginacion.scss
+                     _placeholders.scss
                      _tablas.scss
                      _texturas.scss
 
+        --doc 
+                    _contenido.scss
+        --functions
+                    _convertions.scss
+                    _functions.scss
+                    _tint-shade.scss
+        --mixins
+                    _mixins.scss  ( contiene todos los imports de los mixins)
         --layout
+                    --Template1
+                    --Template2
+                    --Template3
                     _2x.scss
                     _breakpoints.scss
+                    _content-home.scss
+                    _footer.scss
+                    _formularios.scss
+                    _grid.scss
+                    _header.scss
+                    _sidebar.scss
+        --layout
+                    _inicio.scss
                     _sitio.scss
+        --themes
+        --vendors   
 
-        --lib
-                    _mixins.scss
-                    _placeholders.scss
-                    _variables.scss
+    -&gt;vendor (directorio con ficheros sass de 3rd party)
+</code></pre>
+<pre><code>
+
 </code></pre><p>El archivo <code>contenido.scss</code> se compila al principio del <code>style.css</code> para dar una 
-guía de donde tenemos nuestros elementos y su nombre, gracias a los comentarios 
-BEM na búsqueda <code>cmd/ctrl + f</code>en SublimeText que empiece por $NOMBREDESECCION 
-nos ayudará mucho a encontrar el contenido.</p>
-<p>A su vez están todas las secciones separadas unas de las otras para ubicar rápidamente
+gu&iacute;a de donde tenemos nuestros elementos y su nombre, gracias a los comentarios 
+BEM la búsqueda <code>cmd/ctrl + f</code>en SublimeText que empiece por $NOMBREDESECCION 
+nos ayudar&aacute; mucho a encontrar el contenido.</p>
+<p>A su vez est&aacute;n todas las secciones separadas unas de las otras para ubicar r&aacute;pidamente
  cuando echamos un vistazo.</p>
 <p>El archivo <code>_debug.scss</code> viene comentado, pero lo puedes incluir para tener una 
-pequeña guía de la semántica de tu documento html.</p>
+peque&ntilde;a gu&iacute;a de la sem&aacute;ntica de tu documento html.</p>
 <p>El archivo <code>lt-ie9.scss</code> incluye un fallback para todo lo que incluimos en los
  mediaqueries con la clase <code>.ie8-sucks</code>. Si os da corte con vuestro cliente, 
- podéis cambiar la clase en el archivo <code>_variables.scss</code>.</p>
-<h3 id="codekit">Codekit</h3>
-<p>Iré adaptándolo a Codekit pero sin que afecte a los que no lo usan. De momento si 
-usas Codekit, incluyo el archivo <code>config.codekit</code>y todos los <code>.scss</code>son compilados 
+ pod&eacute;is cambiar la clase en el archivo <code>_variables.scss</code>.</p>
+<h3 id="prepros-codekit">Prepros/Codekit</h3>
+<p>Ir&eacute; adapt&aacute;ndolo a Prepros/Codekit pero sin que afecte a los que no lo usan. De momento si 
+usas Codekit, incluyo el archivo <code>config.codekit</code>. Todos los <code>.scss</code>son compilados 
 en la carpeta <code>css</code>.</p>
 <h2 id="patrones">Patrones</h2>
-<p>Siempre necesito una guía de estilos o de patrones para hacerme una idea de la 
-atmósfera de diseño de la web. Para esto tengo la carpeta <code>patrones</code>donde tengo 
-el <code>index.html</code> que me da un pequeño resumen de los elementos de la web y se ajusta
-a la configuración de nuestro CSS.</p>
-<p>Me gustaría poner código en cada elemento para así hacer que sea funcional no solo
-al diseñador sino al frontend, pero ese trabajo va a tener que esperar.</p>
-<h2 id="tip">Tip</h2>
+<p>Siempre necesito una gu&iacute;a de estilos o de patrones para hacerme una idea de la 
+atm&oacute;sfera de dise&ntilde;o de la web. Para esto tengo la carpeta <code>patrones</code>donde tengo 
+el <code>index.html</code> que me da un peque&ntilde;o resumen de los elementos de la web y se ajusta
+a la configuraci&oacute;n de nuestro CSS.</p>
+<p>Me gustar&iacute;a poner c&oacute;digo en cada elemento para as&iacute; hacer que sea funcional no solo
+al dise&ntilde;ador sino al frontend, pero ese trabajo va a tener que esperar.</p>
+<h2 id="tip1">Tip1</h2>
 <p><em>Modulariza</em> <strong>todo</strong> lo que puedas, el archivo <code>style.scss</code> 
-es para meter archivos. Crea módulos, divide tu CSS en tantos archivos como puedas; 
+es para meter archivos. Crea m&oacute;dulos, divide tu CSS en tantos archivos como puedas; 
 el CSS del header en <code>header.scss</code>, <code>content-home.scss</code>, <code>footer.scss</code>, etc...</p>
+<h2 id="tip2">Tip2</h2>
+<p>Se deberia intentar seguir esta convenci&oacute;n de nombres o algo parecido
+<a href="http://www.apppie.org/pages/approach/naming.html">http://www.apppie.org/pages/approach/naming.html</a></p>
